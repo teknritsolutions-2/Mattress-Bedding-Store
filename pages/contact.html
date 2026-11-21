@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Fold &amp; Field</title>
+    <meta
+      name="description"
+      content="Explore Fold &amp; Field mattresses, bedding and guides to bedroom comfort."
+    />
+    <link rel="icon" href="../assets/icons/fold.svg" />
+    <script src="../assets/js/preferences.js?v=1"></script>
+    <link rel="stylesheet" href="../assets/css/style.css?v=1" />
+  </head>
+  <body data-page="contact">
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <div class="wrap bar">
+        <a class="brand" href="../index.html">
+          <span data-icon="layers"> </span>
+          <span>Fold <i>&amp;</i> Field</span>
+        </a>
+        <nav class="desktop">
+          <details class="home-menu">
+            <summary>Home</summary>
+            <div>
+              <a class="" href="../index.html">Home 1</a>
+              <a class="" href="../pages/home2.html">Home 2</a>
+            </div>
+          </details>
+          <a class="" href="../pages/about.html">About</a>
+          <a class="" href="../pages/products.html">Mattresses</a>
+          <a class="" href="../pages/bedding.html">Pillows & Bedding</a>
+          <a class="" href="../pages/trial-returns.html">Trial & Returns</a>
+          <a class="" href="../pages/contact.html" aria-current="page"
+            >Contact</a
+          >
+        </nav>
+        <div class="utilities">
+          <button
+            class="tool"
+            data-theme
+            aria-label="Switch colour theme"
+          ></button>
+          <button
+            class="tool direction"
+            data-dir
+            aria-label="Switch text direction"
+          >
+            RTL
+          </button>
+          <a
+            class="btn nav-visit"
+            href="../pages/contact.html#visit"
+            aria-current="page"
+            >Visit store</a
+          >
+        </div>
+        <button
+          class="menu-toggle tool"
+          aria-label="Open navigation"
+          aria-controls="drawer"
+          aria-expanded="false"
+          data-icon="menu"
+        ></button>
+      </div>
+    </header>
+    <dialog id="drawer" aria-label="Navigation menu">
+      <div class="drawer-top">
+        <a class="brand" href="../index.html">
+          <span data-icon="layers"> </span>
+          <span>Fold <i>&amp;</i> Field</span>
+        </a>
+        <button
+          class="tool"
+          data-close
+          aria-label="Close navigation"
+          data-icon="close"
+        ></button>
+      </div>
+      <nav>
+        <a class="" href="../index.html">Home 1</a>
+        <a class="" href="../pages/home2.html">Home 2</a>
+        <a class="" href="../pages/about.html">About</a>
+        <a class="" href="../pages/products.html">Mattresses</a>
+        <a class="" href="../pages/bedding.html">Pillows & Bedding</a>
+        <a class="" href="../pages/trial-returns.html">Trial & Returns</a>
+        <a class="" href="../pages/contact.html" aria-current="page">Contact</a>
+      </nav>
+      <div class="actions">
+        <button
+          class="tool"
+          data-theme
+          aria-label="Switch colour theme"
+        ></button>
+        <button
+          class="tool direction"
+          data-dir
+          aria-label="Switch text direction"
+        >
+          RTL
+        </button>
+        <a
+          class="btn nav-visit"
+          href="../pages/contact.html#visit"
+          aria-current="page"
+          >Visit store</a
+        >
+      </div>
+    </dialog>
+    <main id="main">
+      <section class="intro wrap">
+        <div class="eyebrow">Contact</div>
+        <h1>Plan a store visit.</h1>
+        <p>
+          Choose the products you would like to explore and prepare a request to
+          share with the store.
+        </p>
+      </section>
+      <section class="wrap visit" id="visit">
+        <div>
+          <h2>Your visit request</h2>
+          <p>
+            Requests are prepared on this device. Share your downloaded details
+            with the store to arrange a visit.
+          </p>
+          <form id="visit-form">
+            <div class="form-grid">
+              <label
+                >Full name<input
+                  required
+                  name="name"
+                  autocomplete="name"
+                  maxlength="100"
+                />
+              </label>
+              <label
+                >Phone number<input
+                  required
+                  type="tel"
+                  name="phone"
+                  autocomplete="tel"
+                  maxlength="24"
+                />
+              </label>
+              <label
+                >Email<input
+                  required
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  maxlength="160"
+                />
+              </label>
+              <label
+                >Product interest<select name="product" required></select>
+              </label>
+              <label data-category
+                >Preferred mattress category (optional)<select
+                  name="category"
+                ></select>
+              </label>
+              <label data-size
+                >Preferred size (optional)<select name="size"></select>
+              </label>
+              <label
+                >Preferred visit date<input required type="date" name="date" />
+              </label>
+              <label
+                >Preferred time<input required type="time" name="time" />
+              </label>
+            </div>
+            <label
+              >Additional notes (optional)<textarea
+                name="notes"
+                rows="4"
+                maxlength="1800"
+              ></textarea>
+            </label>
+            <button class="btn">Review request</button>
+          </form>
+          <div id="review" hidden>
+            <h3 tabindex="-1">Review your request</h3>
+            <dl></dl>
+            <div class="actions">
+              <button class="btn" id="download">Download request</button>
+              <button class="outline" id="copy">Copy</button>
+              <button class="outline" id="edit">Edit request</button>
+            </div>
+            <p role="status" id="feedback"></p>
+          </div>
+        </div>
+        <aside>
+          <h2>Before your visit</h2>
+          <h3>What should I bring?</h3>
+          <p>
+            Note your frame’s inside length, width and base height. Bring the
+            names of any products you want to compare.
+          </p>
+          <h3>What can I compare?</h3>
+          <p>
+            Ask about mattress firmness, pillow loft, sheet depth and care
+            instructions for each material.
+          </p>
+          <h3>Is a time confirmed?</h3>
+          <p>
+            A preferred date and time help describe your request. The store must
+            confirm availability separately.
+          </p>
+          <div id="store-details"></div>
+        </aside>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap footer-grid">
+        <div>
+          <a class="brand" href="../index.html">
+            <span data-icon="layers"> </span>
+            <span>Fold <i>&amp;</i> Field</span>
+          </a>
+          <p>Mattresses, pillows &amp; bedding</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <a class="" href="../index.html">Home 1</a>
+          <a class="" href="../pages/home2.html">Home 2</a>
+          <a class="" href="../pages/about.html">About</a>
+        </div>
+        <div>
+          <h3>Collection</h3>
+          <a class="" href="../pages/products.html">Mattresses</a>
+          <a class="" href="../pages/bedding.html">Pillows & Bedding</a>
+        </div>
+        <div>
+          <h3>Visit &amp; support</h3>
+          <a class="" href="../pages/trial-returns.html">Trial & Returns</a>
+          <a class="" href="../pages/contact.html" aria-current="page"
+            >Contact</a
+          >
+          <a class="" href="../pages/contact.html#visit" aria-current="page"
+            >Plan a visit</a
+          >
+        </div>
+      </div>
+    </footer>
+    <button
+      class="to-top tool"
+      hidden
+      aria-label="Back to top"
+      data-icon="up"
+    ></button>
+    <script type="module" src="../assets/js/main.js?v=1"></script>
+    <script type="module" src="../assets/js/visit-form.js?v=1"></script>
+  </body>
+</html>

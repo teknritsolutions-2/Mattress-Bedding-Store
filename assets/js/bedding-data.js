@@ -1,0 +1,52 @@
+export const bedding = [
+  {
+    id: "cloud-pillow",
+    name: "Cloud Pillow",
+    type: "Pillows",
+    image: "bedding/pillow",
+    material: "Cotton shell with soft fibre fill",
+    description: "A soft, squeezable layer beneath your pillowcase.",
+    care: "Wash gently and dry the fill thoroughly.",
+    variants: [{ size: "Standard", dimensions: "51 × 66", price: 1490 }],
+  },
+  {
+    id: "percale-sheets",
+    name: "Percale Sheet Set",
+    type: "Sheets",
+    image: "bedding/sheets",
+    material: "Plain-weave cotton percale",
+    description: "A crisp sheet set with a smooth, matte finish.",
+    care: "Machine wash with similar colours. Line dry or tumble on low.",
+    variants: [
+      { size: "Queen", dimensions: "152 × 198 fitted", price: 3290 },
+      { size: "King", dimensions: "183 × 198 fitted", price: 3690 },
+    ],
+  },
+  {
+    id: "loft-duvet",
+    name: "Loft Duvet",
+    type: "Duvets",
+    image: "bedding/duvet",
+    material: "Cotton casing with quilted fibre fill",
+    description: "An inviting top layer with evenly distributed loft.",
+    care: "Air regularly and follow the care label before washing.",
+    variants: [
+      { size: "Queen", dimensions: "220 × 230", price: 4990 },
+      { size: "King", dimensions: "260 × 230", price: 5690 },
+    ],
+  },
+  {
+    id: "everyday-protector",
+    name: "Everyday Protector",
+    type: "Protectors",
+    image: "bedding/protector",
+    material: "Quilted cotton blend with an elasticated skirt",
+    description: "A washable layer between your mattress and fitted sheet.",
+    care: "Gentle wash and low heat. Check the skirt depth against your mattress.",
+    variants: [
+      { size: "Single", dimensions: "91 × 190", price: 1290 },
+      { size: "Queen", dimensions: "152 × 198", price: 1890 },
+      { size: "King", dimensions: "183 × 198", price: 2190 },
+    ],
+  },
+];
