@@ -1,5 +1,5 @@
 import { icon } from "./icons.js";
-import { policy } from "./site-config.js";
+import { policy } from "./site-config.js?v=2";
 const doc = document.documentElement;
 const drawer = document.querySelector("#drawer");
 const opener = document.querySelector(".menu-toggle");

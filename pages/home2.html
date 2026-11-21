@@ -8,9 +8,9 @@
       name="description"
       content="Explore Fold &amp; Field mattresses, bedding and guides to bedroom comfort."
     />
-    <link rel="icon" href="../assets/icons/fold.svg" />
-    <script src="../assets/js/preferences.js?v=1"></script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=1" />
+    <link rel="icon" href="../assets/icons/fold.svg?v=2" />
+    <script src="../assets/js/preferences.js?v=2"></script>
+    <link rel="stylesheet" href="../assets/css/style.css?v=2" />
   </head>
   <body data-page="home2">
     <a class="skip" href="#main">Skip to content</a>
@@ -103,108 +103,232 @@
       </div>
     </dialog>
     <main id="main">
-      <section class="intro wrap">
-        <div class="eyebrow">The comfort guide</div>
-        <h1>Build your bed, layer by layer.</h1>
-        <p>
-          Start with the space you have, then narrow the choices by how you like
-          your bed to feel.
-        </p>
+      <section class="build-hero wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">The bedroom guide</p>
+          <h1>Build your<br />better bed.</h1>
+          <p>
+            Choose a size, compare how mattresses feel, then add a pillow and
+            bedding that fit.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#sizes">Start with size</a
+            ><a class="outline" href="../pages/bedding.html">Shop bedding</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img
+            src="../assets/images/retail/guide.webp"
+            alt="Layered white bedding in a bedroom beside a window"
+            width="1067"
+            height="1600"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
       </section>
-      <div class="guide-image wrap">
-        <img
-          src="../assets/images/lifestyle/guide.webp"
-          alt="An oak-framed bed with the sheet turned back to reveal the quilted top"
-          width="1080"
-          height="720"
-          fetchpriority="high"
-        />
-      </div>
-      <section id="sizes" class="wrap section">
+      <section id="sizes" class="wrap section retail-section">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Bed size guide</div>
-            <h2>Measure the frame first.</h2>
+            <h2>Start with bed size</h2>
             <p>
-              Measure the inside width and length. Choose a size to see matching
-              models and check their exact dimensions.
+              Measure the inside of your frame. Check the exact dimensions
+              listed for each model.
             </p>
           </div>
         </div>
         <div class="size-links" data-sizes></div>
       </section>
-      <section class="wash">
-        <div class="wrap section">
-          <div class="eyebrow">Comfort guide</div>
-          <h2>How do you like to settle in?</h2>
-          <div class="reading">
-            <div>
-              <h3>A little give</h3>
-              <p>
-                Explore plush foam if you enjoy sinking gently into the surface.
-              </p>
-            </div>
-            <div>
-              <h3>A little bounce</h3>
-              <p>
-                Look at a medium spring mattress for a responsive feel when
-                turning.
-              </p>
-            </div>
-            <div>
-              <h3>A steadier surface</h3>
-              <p>
-                Explore firm orthopaedic constructions if you prefer less
-                initial give.
-              </p>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="btn" href="../pages/products.html"
-              >Compare the constructions</a
-            >
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>Choose your mattress feel</h2></div>
+        </div>
+        <div class="size-links feel-links">
+          <a href="../pages/products.html?firmness=Plush#catalogue"
+            ><h3>Plush</h3>
+            <span>More initial give as you settle in.</span></a
+          ><a href="../pages/products.html?firmness=Medium#catalogue"
+            ><h3>Medium</h3>
+            <span>Moderate give across the surface.</span></a
+          ><a href="../pages/products.html?firmness=Firm#catalogue"
+            ><h3>Firm</h3>
+            <span>Less initial give under pressure.</span></a
+          >
+        </div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div>
+            <h2>Mattresses to compare</h2>
+            <p>
+              See how thickness, construction and feel change across models.
+            </p>
           </div>
         </div>
+        <div class="cards guide-matches" id="featured"></div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="editorial-grid">
+          <figure>
+            <img
+              src="../assets/images/retail/pillow.webp"
+              alt="A white pillow on a bed"
+              width="1100"
+              height="826"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div>
+            <h2>Find your pillow</h2>
+            <p>
+              Loft describes height. Firmness describes how strongly the pillow
+              resists compression. Compare flat and contoured shapes, then try
+              fibre, latex or memory foam fills.
+            </p>
+            <div class="actions">
+              <a class="btn" href="../pages/bedding.html?type=Pillows#catalogue"
+                >Use the pillow finder</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>Choose the bedding layers</h2></div>
+        </div>
+        <div class="category-grid category-grid--four">
+          <a
+            class="category-tile"
+            href="../pages/bedding.html?type=Sheets#catalogue"
+            ><img
+              src="../assets/images/retail/sheets.webp"
+              alt=""
+              width="733"
+              height="1100"
+              loading="lazy"
+              decoding="async"
+            /><span>Sheets</span></a
+          ><a
+            class="category-tile"
+            href="../pages/bedding.html?type=Sheets#catalogue"
+            ><img
+              src="../assets/images/retail/pillowcase.webp"
+              alt=""
+              width="733"
+              height="1100"
+              loading="lazy"
+              decoding="async"
+            /><span>Pillowcases</span></a
+          ><a
+            class="category-tile"
+            href="../pages/bedding.html?type=Duvets#catalogue"
+            ><img
+              src="../assets/images/retail/duvet.webp"
+              alt=""
+              width="825"
+              height="1100"
+              loading="lazy"
+              decoding="async"
+            /><span>Duvets &amp; comforters</span></a
+          ><a
+            class="category-tile"
+            href="../pages/bedding.html?type=Protectors#catalogue"
+            ><img
+              src="../assets/images/retail/protector.webp"
+              alt=""
+              width="1100"
+              height="733"
+              loading="lazy"
+              decoding="async"
+            /><span>Protectors</span></a
+          >
+        </div>
+      </section>
+      <section class="wrap section retail-section shop-room">
+        <div class="editorial-grid">
+          <figure>
+            <img
+              src="../assets/images/retail/layer-room.webp"
+              alt="Layered bed next to a black lamp and wood nightstand"
+              width="1100"
+              height="733"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div>
+            <h2>Put the layers together</h2>
+            <p>
+              Start with a mattress that fits your frame, tuck in a fitted
+              sheet, then finish the bed with a duvet that gives you enough
+              drape.
+            </p>
+            <p class="note">
+              Room photograph for inspiration. Explore the suggested layers
+              below.
+            </p>
+            <div
+              class="cards curation"
+              data-curated="willow-foam loft-duvet linen-sheets"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>Compare mattress constructions</h2></div>
+        </div>
+        <dl class="learn-list">
+          <div>
+            <dt>Pocket springs</dt>
+            <dd>
+              Fabric sleeves wrap individual coils so each can compress
+              independently. Bonnell coils connect across the unit and respond
+              as an assembly.
+            </dd>
+          </div>
+          <div>
+            <dt>Memory foam</dt>
+            <dd>
+              Viscoelastic foam gradually conforms under pressure and recovers
+              after you move. An open-cell formulation changes the structure of
+              the foam.
+            </dd>
+          </div>
+          <div>
+            <dt>Latex &amp; hybrids</dt>
+            <dd>
+              Latex compresses and rebounds differently from memory foam. A
+              hybrid combines comfort layers with a spring support core.
+            </dd>
+          </div>
+          <div>
+            <dt>Zoned support</dt>
+            <dd>
+              Some cores vary coil tension or foam firmness by area. Compare the
+              position of the zones with your usual sleeping position.
+            </dd>
+          </div>
+        </dl>
       </section>
       <section class="wrap section">
-        <div class="eyebrow">The finishing layers</div>
-        <h2>Fit the bedding to the bed.</h2>
-        <div class="reading">
+        <div class="retail-callout">
           <div>
-            <h3>Pillow loft</h3>
+            <h2>Bring your measurements</h2>
             <p>
-              Compare pillow heights with your usual sleeping position in mind.
+              Add a chosen model and size to an enquiry, or open a general
+              request to discuss your shortlist.
             </p>
           </div>
-          <div>
-            <h3>Sheet depth</h3>
-            <p>
-              Allow enough pocket depth to wrap the mattress and any protector.
-            </p>
+          <div class="actions">
+            <a class="btn" href="../pages/contact.html#visit"
+              >Plan a store visit</a
+            ><a class="outline" href="../pages/products.html"
+              >Review the mattresses</a
+            >
           </div>
-          <div>
-            <h3>Duvet width</h3>
-            <p>
-              Measure how much drape you want on each side, especially for a
-              shared bed.
-            </p>
-          </div>
-        </div>
-        <a class="text-link" href="../pages/bedding.html">Browse bedding</a>
-      </section>
-      <section class="cta">
-        <div class="wrap">
-          <div>
-            <div class="eyebrow">In store</div>
-            <h2>Bring your measurements.</h2>
-            <p>
-              Save the name and size of a model you would like to explore on
-              your visit.
-            </p>
-          </div>
-          <a class="btn light" href="../pages/contact.html#visit"
-            >Plan a store visit</a
-          >
         </div>
       </section>
     </main>
@@ -242,7 +366,7 @@
       aria-label="Back to top"
       data-icon="up"
     ></button>
-    <script type="module" src="../assets/js/main.js?v=1"></script>
-    <script type="module" src="../assets/js/catalogue.js?v=1"></script>
+    <script type="module" src="../assets/js/main.js?v=2"></script>
+    <script type="module" src="../assets/js/catalogue.js?v=2"></script>
   </body>
 </html>

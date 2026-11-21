@@ -1,6 +1,6 @@
-import { mattresses } from "./products-data.js";
-import { bedding } from "./bedding-data.js";
-import { store } from "./site-config.js";
+import { mattresses } from "./products-data.js?v=2";
+import { bedding } from "./bedding-data.js?v=2";
+import { store } from "./site-config.js?v=2";
 const form = document.querySelector("#visit-form");
 const fields = form.elements;
 const review = document.querySelector("#review");
@@ -14,33 +14,45 @@ function options(field, entries) {
 options(fields.product, [
   ["", "Choose an interest"],
   ["general", "General mattress enquiry"],
+  ["sizes", "Bed size enquiry"],
+  ["visit", "General store visit"],
   ["bedding", "General bedding enquiry"],
   ["policy", "Policy enquiry"],
   ...all.map((p) => [p.id, p.name]),
 ]);
+const topics = {
+  mattress: "general",
+  mattresses: "general",
+  bedding: "bedding",
+  size: "sizes",
+  sizes: "sizes",
+  policy: "policy",
+  visit: "visit",
+};
 fields.product.value = all.some((p) => p.id === params.get("product"))
   ? params.get("product")
-  : params.get("topic") === "policy"
-    ? "policy"
+  : Object.hasOwn(topics, params.get("topic"))
+    ? topics[params.get("topic")]
     : "";
 function sync() {
   const product = all.find((p) => p.id === fields.product.value);
   const isMattress = product
-    ? !!product.firmness
-    : ["general", ""].includes(fields.product.value);
+    ? product.productGroup === "mattress"
+    : ["general", "sizes", ""].includes(fields.product.value);
   const hasSize = isMattress || !!product;
   fields.category.closest("label").hidden = !isMattress;
   fields.category.disabled = !isMattress;
   fields.size.closest("label").hidden = !hasSize;
   fields.size.disabled = !hasSize;
-  const categories = product?.firmness
-    ? [product.type]
-    : [...new Set(mattresses.map((p) => p.type))];
+  const categories =
+    product && isMattress
+      ? [product.type]
+      : [...new Set(mattresses.map((p) => p.type))];
   options(fields.category, [
     ["", "No preference"],
     ...categories.map((s) => [s, s]),
   ]);
-  if (product?.firmness) fields.category.value = product.type;
+  if (product && isMattress) fields.category.value = product.type;
   const sizes = [
     ...new Set(
       (product ? [product] : mattresses).flatMap((p) =>

@@ -1,0 +1,19 @@
+# Catalogue technology research
+
+Fold & Field product names, specifications and INR prices are illustrative. The references explain real construction methods and textiles. Manufacturer examples establish how the components work. Performance claims, certifications and policy terms from those examples do not apply to this catalogue.
+
+## Mattresses
+
+- **Bonnell and pocket springs.** Linked hourglass coils form one connected unit. Pocket springs are individually wrapped so nearby coils can compress to different depths. Both can be topped with quilted fabric, fibre or foam for surface feel. [IKEA mattress guide](https://www.ikea.com/au/en/rooms/bedroom/how-to/how-to-choose-a-mattress-thats-best-for-you-pub35904700/)
+- **Comfort, transition and support layers.** The cover encloses the structure. The comfort layer shapes first contact, a transition layer can bridge the change in firmness, and the support core makes up the foundation. Many designs omit a separate transition layer. Hybrids pair a spring core with a substantial comfort system, such as memory foam or latex. [Sleep Foundation construction overview](https://www.sleepfoundation.org/mattress-construction)
+- **Memory foam, gel and open cells.** Viscoelastic polyurethane foam recovers gradually after compression. Gel additives and interconnected cells describe specific material choices. Surface feel and heat transfer depend on the whole mattress, bedding and room conditions. [FXI bedding materials](https://www.fxi.com/bedding)
+- **Latex, zoning and edges.** Latex is a resilient comfort-layer option. A zoned support design changes resistance across sections. Firmer perimeter coils or rails can reinforce the border. The number and placement of zones vary by construction. [IKEA mattress and bedding buying guide](https://www.ikea.com/gb/en/files/pdf/75/99/759977bf/mattress_quilts_pillows_jan25.pdf)
+- **Covers and thickness.** Stretch-knit ticking and mesh panels describe cover fabrics. Total mattress height includes all layers and matters when checking frame clearance and fitted-sheet depth. Confirm each model's exact width and length against the frame. [IKEA mattress and bedding buying guide](https://www.ikea.com/gb/en/files/pdf/75/99/759977bf/mattress_quilts_pillows_jan25.pdf)
+
+## Pillows and bedding
+
+- **Solid foam and contour.** A moulded foam pillow retains its shaped profile. Different edge heights give a shopper two options when the pillow is turned around. [IKEA contour memory foam example](https://www.ikea.com/us/en/p/rosenskaerm-ergonomic-pillow-side-back-sleeper-90444371/)
+- **Adjustable fill and fibres.** Removing shredded foam and fibre from a zipped liner changes the filled height. Loose fibre is also used on its own for a more compressible classic shape. [Coop adjustable-fill construction](https://coopsleepgoods.com/pages/the-original-adjustable-collection) · [Coop fill materials](https://coopsleepgoods.com/products/adjustable-shredded-memory-foam-pillow-refill-foam-1-2-lb)
+- **Latex ventilation.** Pincore moulding leaves holes through a latex core. Comfort depends on the foam formulation as well as its thickness and shape. [Talalay Global process](https://www.talalayglobal.com/our-process)
+- **Cool-touch and phase-change covers.** A cool-to-touch fabric describes initial sensation. Phase-change material can absorb and later release heat by changing state. Active cooling uses powered equipment to move heat. The catalogue's illustrative pillow uses a passive cover. [Outlast phase-change materials](https://www.outlast.com/en/discover-outlast/news-events/phase-change-material)
+- **Percale and sateen.** Cotton percale uses plain weave for a crisp, matte surface. Sateen uses longer yarn floats for a smoother surface and more sheen. Fibre and weave are separate choices. [CottonWorks sheet buying guide](https://cottonworks.com/wp-content/uploads/2021/03/Cotton-Sheets-Buying-Guide_Spreads.pdf)

@@ -8,9 +8,9 @@
       name="description"
       content="Explore Fold &amp; Field mattresses, bedding and guides to bedroom comfort."
     />
-    <link rel="icon" href="../assets/icons/fold.svg" />
-    <script src="../assets/js/preferences.js?v=1"></script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=1" />
+    <link rel="icon" href="../assets/icons/fold.svg?v=2" />
+    <script src="../assets/js/preferences.js?v=2"></script>
+    <link rel="stylesheet" href="../assets/css/style.css?v=2" />
   </head>
   <body data-page="bedding">
     <a class="skip" href="#main">Skip to content</a>
@@ -105,30 +105,298 @@
       </div>
     </dialog>
     <main id="main">
-      <div class="bedding-head">
-        <section class="intro wrap">
-          <div class="eyebrow">Bedroom layers</div>
-          <h1>Pillows & bedding.</h1>
+      <section class="wrap catalog-hero">
+        <div class="intro">
+          <p class="eyebrow">Pillows &amp; bedding</p>
+          <h1>The layers that make the bed</h1>
           <p>
-            Find a pillow, a fresh set of sheets or a finishing layer for your
-            bed.
+            Explore pillow fills, sheet weaves, duvet weights and protective
+            layers for your mattress.
           </p>
-        </section>
-      </div>
-      <section class="wrap catalog">
+          <div class="actions">
+            <a class="btn" href="#catalogue">Browse the collection</a>
+          </div>
+        </div>
+        <img
+          src="../assets/images/retail/bedding.webp"
+          alt="Folded white textile on a wooden table"
+          width="733"
+          height="1100"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>Shop by category</h2></div>
+        </div>
+        <div class="category-grid category-grid--four">
+          <a
+            class="category-tile"
+            href="../pages/bedding.html?type=Pillows#catalogue"
+            ><img
+              src="../assets/images/retail/pillow.webp"
+              alt=""
+              width="1100"
+              height="826"
+              loading="lazy"
+              decoding="async"
+            /><span>Pillows</span></a
+          ><a
+            class="category-tile"
+            href="../pages/bedding.html?type=Sheets#catalogue"
+            ><img
+              src="../assets/images/retail/sheets.webp"
+              alt=""
+              width="733"
+              height="1100"
+              loading="lazy"
+              decoding="async"
+            /><span>Sheets</span></a
+          ><a
+            class="category-tile"
+            href="../pages/bedding.html?type=Duvets#catalogue"
+            ><img
+              src="../assets/images/retail/duvet.webp"
+              alt=""
+              width="825"
+              height="1100"
+              loading="lazy"
+              decoding="async"
+            /><span>Duvets &amp; comforters</span></a
+          ><a
+            class="category-tile"
+            href="../pages/bedding.html?type=Protectors#catalogue"
+            ><img
+              src="../assets/images/retail/protector.webp"
+              alt=""
+              width="1100"
+              height="733"
+              loading="lazy"
+              decoding="async"
+            /><span>Protectors</span></a
+          >
+        </div>
+        <div class="actions">
+          <a class="outline" href="../pages/bedding.html?type=Pillows#catalogue"
+            >Find your pillow</a
+          >
+        </div>
+      </section>
+      <section id="catalogue" class="wrap catalog">
+        <div class="section-head">
+          <div><h2>Shop pillows &amp; bedding</h2></div>
+        </div>
         <form class="filters" data-filter>
           <label
             >Category<select name="type">
-              <option value="">Any category</option>
-            </select>
-          </label>
-          <button class="clear" type="reset">Clear filters</button>
+              <option value="">All categories</option>
+            </select></label
+          ><label
+            >Sort by<select name="sort">
+              <option value="">Featured order</option>
+              <option value="price-asc">Price, low to high</option>
+              <option value="price-desc">Price, high to low</option>
+              <option value="name">Name, A to Z</option>
+            </select></label
+          ><button class="clear" type="reset">Clear filters</button>
+          <fieldset data-pillow-filters hidden>
+            <legend>Find your pillow</legend>
+            <div class="pillow-controls">
+              <label
+                >Loft<select name="loft">
+                  <option value="">All lofts</option>
+                </select></label
+              ><label
+                >Fill<select name="fill">
+                  <option value="">All fills</option>
+                </select></label
+              ><label
+                >Shape<select name="shape">
+                  <option value="">All shapes</option>
+                </select></label
+              ><label
+                >Firmness<select name="firmness">
+                  <option value="">All feels</option>
+                </select></label
+              >
+            </div>
+          </fieldset>
         </form>
         <div class="result-bar">
-          <strong id="count" role="status"> </strong>
-          <span>Illustrative catalogue · Indicative prices</span>
+          <strong id="count" role="status"></strong
+          ><span
+            >Illustrative catalogue · Indicative INR prices · Representative
+            photos</span
+          >
         </div>
         <div id="results" class="cards"></div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="editorial-grid">
+          <figure>
+            <img
+              src="../assets/images/retail/pillowcase.webp"
+              alt="Fabric and pillow cover detail"
+              width="733"
+              height="1100"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div>
+            <h2>What’s inside your pillow?</h2>
+            <dl class="learn-list">
+              <div>
+                <dt>Solid memory foam</dt>
+                <dd>
+                  A single foam core can hold a flat or contoured profile.
+                </dd>
+              </div>
+              <div>
+                <dt>Adjustable fill</dt>
+                <dd>
+                  A zip gives access to the shredded foam so you can add or
+                  remove fill to change loft.
+                </dd>
+              </div>
+              <div>
+                <dt>Ventilated latex</dt>
+                <dd>
+                  Holes in the elastic foam provide paths for air through the
+                  core.
+                </dd>
+              </div>
+              <div>
+                <dt>Cooling covers</dt>
+                <dd>
+                  A cool-touch textile can affect the first sensation at
+                  contact. Phase-change textiles temporarily absorb or release
+                  heat within their transition range.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>A guide to fabric and fill</h2></div>
+        </div>
+        <dl class="learn-list">
+          <div>
+            <dt>Cotton percale</dt>
+            <dd>Plain weave with a matte surface and crisp hand.</dd>
+          </div>
+          <div>
+            <dt>Cotton sateen</dt>
+            <dd>
+              Longer yarn floats give the fabric a smoother surface with more
+              sheen.
+            </dd>
+          </div>
+          <div>
+            <dt>Washed linen</dt>
+            <dd>
+              Flax fibre with a textured hand and naturally irregular surface.
+            </dd>
+          </div>
+          <div>
+            <dt>Polyester fill</dt>
+            <dd>
+              Fibre loft depends on the fill weight and how the quilting holds
+              it in place.
+            </dd>
+          </div>
+          <div>
+            <dt>Quilted protectors</dt>
+            <dd>
+              A stitched padded surface adds a layer over the mattress. Check
+              the skirt depth against your mattress.
+            </dd>
+          </div>
+        </dl>
+      </section>
+      <section class="wrap section retail-section shop-room">
+        <div class="editorial-grid">
+          <figure>
+            <img
+              src="../assets/images/retail/dressed-bed.webp"
+              alt="Layered bedding in a bedroom"
+              width="1100"
+              height="733"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div>
+            <h2>Complete your bed</h2>
+            <p>
+              Pair a fitted sheet with a pillow at your preferred height and a
+              quilted cover with enough overhang.
+            </p>
+            <p class="note">
+              Room photograph for inspiration. Explore the curated choices
+              below.
+            </p>
+            <div
+              class="cards curation"
+              data-curated="sateen-sheets air-latex-pillow crossline-cover"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>Care for each layer</h2></div>
+        </div>
+        <dl class="learn-list">
+          <div>
+            <dt>Pillow</dt>
+            <dd>
+              Wash the cover as labelled. Spot-clean a foam core only if its
+              care guidance allows it.
+            </dd>
+          </div>
+          <div>
+            <dt>Sheets</dt>
+            <dd>
+              Sort by colour and follow the fabric’s wash and drying
+              instructions.
+            </dd>
+          </div>
+          <div>
+            <dt>Duvet</dt>
+            <dd>
+              Air regularly. Check the label and the care instructions for its
+              fill before washing.
+            </dd>
+          </div>
+          <div>
+            <dt>Protector</dt>
+            <dd>
+              Follow the specified drying temperature, particularly for
+              protectors with a waterproof backing.
+            </dd>
+          </div>
+        </dl>
+      </section>
+      <section class="wrap section">
+        <div class="retail-callout">
+          <div>
+            <h2>Find the mattress underneath</h2>
+            <p>
+              Match your protector pocket and fitted sheet to both the mattress
+              dimensions and the height.
+            </p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="../pages/products.html">Shop mattresses</a
+            ><a class="btn" href="../pages/contact.html#visit"
+              >Plan a store visit</a
+            >
+          </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -167,7 +435,7 @@
       aria-label="Back to top"
       data-icon="up"
     ></button>
-    <script type="module" src="../assets/js/main.js?v=1"></script>
-    <script type="module" src="../assets/js/catalogue.js?v=1"></script>
+    <script type="module" src="../assets/js/main.js?v=2"></script>
+    <script type="module" src="../assets/js/catalogue.js?v=2"></script>
   </body>
 </html>

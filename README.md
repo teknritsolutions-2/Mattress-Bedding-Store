@@ -1,6 +1,6 @@
 # Fold & Field
 
-A seven-page, buildless mattress and bedding storefront. The collection uses illustrative INR prices and example dimensions. Visitors can prepare a store visit request in their browser.
+A seven-page, buildless mattress and bedding storefront. The collection includes 12 mattress models and 16 bedding items with illustrative INR prices, configured dimensions and credited representative photographs. Visitors can prepare a store visit request in their browser.
 
 ## Run locally
 
@@ -13,8 +13,8 @@ From the project root, run `python3 -m http.server 8000` and open `http://localh
 | `index.html` | Storefront, featured mattresses, finder, sleep notes and bedding |
 | `pages/home2.html` | Comfort, size and layering guide |
 | `pages/about.html` | Approach to product selection |
-| `pages/products.html` | Filterable mattress collection |
-| `pages/bedding.html` | Pillows, sheets, duvets and protectors |
+| `pages/products.html` | Filterable and sortable mattress collection with comparison for up to three models |
+| `pages/bedding.html` | Pillow finder and catalogue of sheets, pillowcases, duvets and protectors |
 | `pages/trial-returns.html` | Policy questions and configurable guidance |
 | `pages/contact.html` | Local visit request preparation and review |
 
@@ -41,3 +41,4 @@ The deployment repository is [Mattress-Bedding-Store](https://github.com/teknrit
 - [Image inventory and credits](documentation/asset-credits.md)
 - [QA and completion report](documentation/qa-report.md)
 - [DM Sans font licence](assets/fonts/dm-sans-OFL.txt)
+- [Construction and textile research](documentation/technology.md)

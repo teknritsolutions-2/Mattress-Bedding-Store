@@ -8,9 +8,9 @@
       name="description"
       content="Explore Fold &amp; Field mattresses, bedding and guides to bedroom comfort."
     />
-    <link rel="icon" href="../assets/icons/fold.svg" />
-    <script src="../assets/js/preferences.js?v=1"></script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=1" />
+    <link rel="icon" href="../assets/icons/fold.svg?v=2" />
+    <script src="../assets/js/preferences.js?v=2"></script>
+    <link rel="stylesheet" href="../assets/css/style.css?v=2" />
   </head>
   <body data-page="contact">
     <a class="skip" href="#main">Skip to content</a>
@@ -109,13 +109,44 @@
       </div>
     </dialog>
     <main id="main">
-      <section class="intro wrap">
-        <div class="eyebrow">Contact</div>
-        <h1>Plan a store visit.</h1>
-        <p>
-          Choose the products you would like to explore and prepare a request to
-          share with the store.
-        </p>
+      <section class="wrap catalog-hero">
+        <div class="intro">
+          <p class="eyebrow">Contact</p>
+          <h1>Plan a store visit</h1>
+          <p>
+            Shortlist what you’d like to compare, then prepare your enquiry with
+            the product and size you have in mind.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#visit">Prepare a request</a>
+          </div>
+        </div>
+        <img
+          src="../assets/images/retail/contact.webp"
+          alt="Overhead view of a person trying a mattress in a studio"
+          width="1100"
+          height="733"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>What can we help you find?</h2></div>
+        </div>
+        <div class="link-row">
+          <a class="outline" href="../pages/contact.html?topic=mattress#visit"
+            >Mattresses</a
+          ><a class="outline" href="../pages/contact.html?topic=bedding#visit"
+            >Pillows &amp; bedding</a
+          ><a class="outline" href="../pages/contact.html?topic=sizes#visit"
+            >Bed sizes</a
+          ><a class="outline" href="../pages/contact.html?topic=policy#visit"
+            >Trial &amp; returns</a
+          ><a class="outline" href="../pages/contact.html?topic=visit#visit"
+            >General store visit</a
+          >
+        </div>
       </section>
       <section class="wrap visit" id="visit">
         <div>
@@ -191,7 +222,7 @@
           </div>
         </div>
         <aside>
-          <h2>Before your visit</h2>
+          <h2>Prepare for your visit</h2>
           <h3>What should I bring?</h3>
           <p>
             Note your frame’s inside length, width and base height. Bring the
@@ -209,6 +240,69 @@
           </p>
           <div id="store-details"></div>
         </aside>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>Visit and product FAQs</h2></div>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>How do I choose a size?</summary>
+            <p>
+              Measure the width and length inside your frame. Compare these
+              figures with the dimensions under each product’s size options.
+            </p>
+          </details>
+          <details>
+            <summary>How do I compare mattress types?</summary>
+            <p>
+              Use the mattress comparison for construction, thickness and
+              firmness. Keep the size the same when comparing indicative prices.
+            </p>
+          </details>
+          <details>
+            <summary>Are the prices final?</summary>
+            <p>
+              The prices shown are indicative INR figures for illustrative
+              products. Confirm the actual quote with the store.
+            </p>
+          </details>
+          <details>
+            <summary>How can I check availability?</summary>
+            <p>
+              Include the model and size you want to see in your enquiry. Ask
+              the store to confirm availability.
+            </p>
+          </details>
+          <details>
+            <summary>How do I prepare a visit request?</summary>
+            <p>
+              Choose your interest and preferred time, review the details, then
+              copy or download the request to share with the store.
+            </p>
+          </details>
+          <details>
+            <summary>Where do I confirm policies?</summary>
+            <p>
+              Check the Trial &amp; Returns page for the questions to ask.
+              Confirm the terms that apply to your purchase through the store’s
+              confirmed contact channel.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>Browse before you visit</h2></div>
+        </div>
+        <div class="link-row">
+          <a class="outline" href="../pages/products.html">Mattresses</a
+          ><a class="outline" href="../pages/bedding.html"
+            >Pillows &amp; bedding</a
+          ><a class="outline" href="../pages/trial-returns.html"
+            >Trial &amp; returns</a
+          >
+        </div>
       </section>
     </main>
     <footer>
@@ -249,7 +343,7 @@
       aria-label="Back to top"
       data-icon="up"
     ></button>
-    <script type="module" src="../assets/js/main.js?v=1"></script>
-    <script type="module" src="../assets/js/visit-form.js?v=1"></script>
+    <script type="module" src="../assets/js/main.js?v=2"></script>
+    <script type="module" src="../assets/js/visit-form.js?v=2"></script>
   </body>
 </html>

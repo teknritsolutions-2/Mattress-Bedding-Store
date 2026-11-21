@@ -8,9 +8,9 @@
       name="description"
       content="Explore Fold &amp; Field mattresses, bedding and guides to bedroom comfort."
     />
-    <link rel="icon" href="../assets/icons/fold.svg" />
-    <script src="../assets/js/preferences.js?v=1"></script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=1" />
+    <link rel="icon" href="../assets/icons/fold.svg?v=2" />
+    <script src="../assets/js/preferences.js?v=2"></script>
+    <link rel="stylesheet" href="../assets/css/style.css?v=2" />
   </head>
   <body data-page="products">
     <a class="skip" href="#main">Skip to content</a>
@@ -105,37 +105,211 @@
       </div>
     </dialog>
     <main id="main">
-      <section class="intro wrap">
-        <div class="eyebrow">The mattress collection</div>
-        <h1>Explore the mattresses.</h1>
-        <p>
-          Compare construction, comfort and size to find your starting point.
-        </p>
+      <section class="wrap catalog-hero">
+        <div class="intro">
+          <p class="eyebrow">The mattress collection</p>
+          <h1>Mattresses</h1>
+          <p>
+            Compare spring, memory foam and firm support constructions. Filter
+            to the sizes that fit your bed.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#catalogue">Browse the collection</a>
+          </div>
+        </div>
+        <img
+          src="../assets/images/retail/catalogue.webp"
+          alt="Black and white bed linen around a mattress"
+          width="1100"
+          height="732"
+          fetchpriority="high"
+          decoding="async"
+        />
       </section>
-      <section class="wrap catalog">
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>Browse by construction</h2></div>
+        </div>
+        <div class="category-grid">
+          <a
+            class="category-tile"
+            href="../pages/products.html?type=Spring#catalogue"
+            ><img
+              src="../assets/images/retail/spring.webp"
+              alt=""
+              width="1100"
+              height="941"
+              loading="lazy"
+              decoding="async"
+            /><span>Spring mattresses</span></a
+          ><a
+            class="category-tile"
+            href="../pages/products.html?type=Memory+Foam#catalogue"
+            ><img
+              src="../assets/images/retail/foam.webp"
+              alt=""
+              width="733"
+              height="1100"
+              loading="lazy"
+              decoding="async"
+            /><span>Memory foam mattresses</span></a
+          ><a
+            class="category-tile"
+            href="../pages/products.html?type=Orthopaedic#catalogue"
+            ><img
+              src="../assets/images/retail/support.webp"
+              alt=""
+              width="1100"
+              height="733"
+              loading="lazy"
+              decoding="async"
+            /><span>Orthopaedic mattresses</span></a
+          >
+        </div>
+      </section>
+      <section id="catalogue" class="wrap catalog">
+        <div class="section-head">
+          <div><h2>Shop mattresses</h2></div>
+        </div>
         <form class="filters" data-filter>
           <label
             >Type<select name="type">
-              <option value="">Any type</option>
-            </select>
-          </label>
-          <label
-            >Size<select name="size">
-              <option value="">Any size</option>
-            </select>
-          </label>
-          <label
+              <option value="">All types</option>
+            </select></label
+          ><label
+            >Bed size<select name="size">
+              <option value="">All sizes</option>
+            </select></label
+          ><label
             >Firmness<select name="firmness">
-              <option value="">Any firmness</option>
-            </select>
-          </label>
-          <button class="clear" type="reset">Clear filters</button>
+              <option value="">All feels</option>
+            </select></label
+          ><label
+            >Sort by<select name="sort">
+              <option value="">Featured order</option>
+              <option value="price-asc">Price, low to high</option>
+              <option value="price-desc">Price, high to low</option>
+              <option value="name">Name, A to Z</option>
+            </select></label
+          ><button class="clear" type="reset">Clear filters</button>
         </form>
+        <p class="note">
+          Price sorting uses the selected size, or the starting price when all
+          sizes are shown.
+        </p>
         <div class="result-bar">
-          <strong id="count" role="status"> </strong>
-          <span>Illustrative catalogue · Indicative prices</span>
+          <strong id="count" role="status"></strong
+          ><span
+            >Illustrative catalogue · Indicative INR prices · Representative
+            photos</span
+          >
         </div>
+        <div id="comparison"></div>
         <div id="results" class="cards"></div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div>
+            <h2>Understand mattress layers</h2>
+            <p>
+              Illustrative layer sequence. Construction and layer count vary by
+              model.
+            </p>
+          </div>
+        </div>
+        <div class="editorial-grid layer-guide">
+          <figure class="construction-photo">
+            <img
+              src="../assets/images/retail/layered-cutaway.webp"
+              alt="Photographed cross-section showing foam and fibre layers beneath a mattress cover"
+              width="1100"
+              height="576"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>
+              Example of layered construction.
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Mattress-coconutfibre%2Bfoam%2Bhemp-_and_sheepwool_PNr%C2%B00085.jpg"
+                >D-Kuru/Wikimedia Commons</a
+              >
+              ·
+              <a href="https://creativecommons.org/licenses/by-sa/3.0/at/"
+                >CC BY-SA 3.0 AT</a
+              >
+              · resized WebP
+            </figcaption>
+          </figure>
+          <ol class="mattress-layers">
+            <li>
+              <strong>Cover</strong
+              ><span
+                >The outer fabric sits over the upholstery. Its fibre and weave
+                affect how it feels to the touch.</span
+              >
+            </li>
+            <li>
+              <strong>Comfort layer</strong
+              ><span
+                >Foam, fibre or latex shapes the first sensation when you lie
+                down.</span
+              >
+            </li>
+            <li>
+              <strong>Transition layer</strong
+              ><span
+                >An intermediate material can bridge the soft top and the denser
+                support core.</span
+              >
+            </li>
+            <li>
+              <strong>Support core</strong
+              ><span>Springs or dense foam form the base of the mattress.</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section id="sizes" class="wrap section retail-section">
+        <div class="section-head">
+          <div>
+            <h2>Mattress size guide</h2>
+            <p>
+              These are example dimensions from the collection. Verify your
+              frame’s inside measurements.
+            </p>
+          </div>
+        </div>
+        <div class="size-links" data-sizes></div>
+      </section>
+      <section class="wrap section retail-section">
+        <div class="section-head">
+          <div><h2>Add your finishing layers</h2></div>
+        </div>
+        <div
+          class="cards"
+          data-curated="everyday-protector contour-pillow pillow-protector-pair"
+        ></div>
+        <div class="actions">
+          <a class="outline" href="../pages/bedding.html"
+            >Explore all bedding</a
+          >
+        </div>
+      </section>
+      <section class="wrap section">
+        <div class="retail-callout">
+          <div>
+            <h2>Ready to compare in person?</h2>
+            <p>
+              Choose a model and size from its details or start a general store
+              visit request.
+            </p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="../pages/contact.html#visit"
+              >Plan a store visit</a
+            >
+          </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -174,7 +348,7 @@
       aria-label="Back to top"
       data-icon="up"
     ></button>
-    <script type="module" src="../assets/js/main.js?v=1"></script>
-    <script type="module" src="../assets/js/catalogue.js?v=1"></script>
+    <script type="module" src="../assets/js/main.js?v=2"></script>
+    <script type="module" src="../assets/js/catalogue.js?v=2"></script>
   </body>
 </html>
