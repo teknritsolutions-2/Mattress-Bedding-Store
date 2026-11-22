@@ -8,16 +8,16 @@
       name="description"
       content="Explore Fold &amp; Field mattresses, bedding and guides to bedroom comfort."
     />
-    <link rel="icon" href="../assets/icons/fold.svg?v=2" />
-    <script src="../assets/js/preferences.js?v=2"></script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=2" />
+    <link rel="icon" href="../assets/icons/fold.svg?v=3" />
+    <script src="../assets/js/preferences.js?v=3"></script>
+    <link rel="stylesheet" href="../assets/css/style.css?v=3" />
   </head>
   <body data-page="bedding">
     <a class="skip" href="#main">Skip to content</a>
     <header>
       <div class="wrap bar">
         <a class="brand" href="../index.html">
-          <span data-icon="layers"> </span>
+          <span data-icon="fold"> </span>
           <span>Fold <i>&amp;</i> Field</span>
         </a>
         <nav class="desktop">
@@ -65,7 +65,7 @@
     <dialog id="drawer" aria-label="Navigation menu">
       <div class="drawer-top">
         <a class="brand" href="../index.html">
-          <span data-icon="layers"> </span>
+          <span data-icon="fold"> </span>
           <span>Fold <i>&amp;</i> Field</span>
         </a>
         <button
@@ -105,30 +105,31 @@
       </div>
     </dialog>
     <main id="main">
-      <section class="wrap catalog-hero">
-        <div class="intro">
-          <p class="eyebrow">Pillows &amp; bedding</p>
-          <h1>The layers that make the bed</h1>
+      <section class="bedding-banner" aria-labelledby="bedding-title">
+        <div class="wrap bedding-banner-copy">
+          <h1 id="bedding-title">Pillows &amp; bedding</h1>
           <p>
-            Explore pillow fills, sheet weaves, duvet weights and protective
-            layers for your mattress.
+            Find your pillow loft, choose your sheets and layer a duvet over a
+            protector that fits.
           </p>
           <div class="actions">
             <a class="btn" href="#catalogue">Browse the collection</a>
           </div>
         </div>
-        <img
-          src="../assets/images/retail/bedding.webp"
-          alt="Folded white textile on a wooden table"
-          width="733"
-          height="1100"
-          fetchpriority="high"
-          decoding="async"
-        />
+        <div class="bedding-banner-photo">
+          <img
+            src="../assets/images/retail/bedding.webp"
+            alt="Folded white and oat-coloured bed linen"
+            width="733"
+            height="1100"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
       </section>
       <section class="wrap section retail-section">
         <div class="section-head">
-          <div><h2>Shop by category</h2></div>
+          <div><h2 id="shop-by-category">Shop by category</h2></div>
         </div>
         <div class="category-grid category-grid--four">
           <a
@@ -185,7 +186,9 @@
       </section>
       <section id="catalogue" class="wrap catalog">
         <div class="section-head">
-          <div><h2>Shop pillows &amp; bedding</h2></div>
+          <div>
+            <h2 id="shop-pillows-and-bedding">Shop pillows &amp; bedding</h2>
+          </div>
         </div>
         <form class="filters" data-filter>
           <label
@@ -226,8 +229,8 @@
         <div class="result-bar">
           <strong id="count" role="status"></strong
           ><span
-            >Illustrative catalogue · Indicative INR prices · Representative
-            photos</span
+            >Prices are indicative. Confirm specifications and availability with
+            the store.</span
           >
         </div>
         <div id="results" class="cards"></div>
@@ -245,8 +248,8 @@
             />
           </figure>
           <div>
-            <h2>What’s inside your pillow?</h2>
-            <dl class="learn-list">
+            <h2 id="what-s-inside-your-pillow">What’s inside your pillow?</h2>
+            <dl class="pillow-tech-grid">
               <div>
                 <dt>Solid memory foam</dt>
                 <dd>
@@ -279,21 +282,24 @@
           </div>
         </div>
       </section>
-      <section class="wrap section retail-section">
+      <section
+        class="wrap section retail-section"
+        aria-labelledby="fabric-and-fill"
+      >
         <div class="section-head">
-          <div><h2>A guide to fabric and fill</h2></div>
+          <div>
+            <h2 id="fabric-and-fill">A guide to fabric and fill</h2>
+            <p>Compare the feel, weave and fit that suit your bed.</p>
+          </div>
         </div>
-        <dl class="learn-list">
+        <dl class="fabric-grid">
           <div>
             <dt>Cotton percale</dt>
-            <dd>Plain weave with a matte surface and crisp hand.</dd>
+            <dd>Plain weave with a crisp hand and a matte surface.</dd>
           </div>
           <div>
             <dt>Cotton sateen</dt>
-            <dd>
-              Longer yarn floats give the fabric a smoother surface with more
-              sheen.
-            </dd>
+            <dd>Longer yarn floats give it a smoother feel and more sheen.</dd>
           </div>
           <div>
             <dt>Washed linen</dt>
@@ -304,53 +310,54 @@
           <div>
             <dt>Polyester fill</dt>
             <dd>
-              Fibre loft depends on the fill weight and how the quilting holds
-              it in place.
+              Fill weight and quilting influence loft and how evenly the fill
+              stays in place.
             </dd>
           </div>
           <div>
             <dt>Quilted protectors</dt>
             <dd>
-              A stitched padded surface adds a layer over the mattress. Check
-              the skirt depth against your mattress.
+              Stitched padding adds a layer over the mattress. Match the skirt
+              depth to the mattress height.
             </dd>
           </div>
         </dl>
       </section>
-      <section class="wrap section retail-section shop-room">
-        <div class="editorial-grid">
-          <figure>
-            <img
-              src="../assets/images/retail/dressed-bed.webp"
-              alt="Layered bedding in a bedroom"
-              width="1100"
-              height="733"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
+      <section
+        class="wrap section retail-section bedding-edit"
+        aria-labelledby="bedding-edit"
+      >
+        <div class="section-head">
           <div>
-            <h2>Complete your bed</h2>
+            <h2 id="bedding-edit">Complete your bed</h2>
             <p>
-              Pair a fitted sheet with a pillow at your preferred height and a
-              quilted cover with enough overhang.
+              Pair a smooth fitted sheet with a pillow at your preferred height
+              and a quilted cover with enough overhang.
             </p>
-            <p class="note">
-              Room photograph for inspiration. Explore the curated choices
-              below.
-            </p>
-            <div
-              class="cards curation"
-              data-curated="sateen-sheets air-latex-pillow crossline-cover"
-            ></div>
           </div>
+        </div>
+        <figure>
+          <img
+            src="../assets/images/retail/dressed-bed.webp"
+            alt="A bed made with layered bedding beside a window"
+            width="1100"
+            height="733"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="bedding-edit-picks">
+          <div
+            class="cards"
+            data-curated="sateen-sheets air-latex-pillow crossline-cover"
+          ></div>
         </div>
       </section>
       <section class="wrap section retail-section">
         <div class="section-head">
-          <div><h2>Care for each layer</h2></div>
+          <div><h2 id="care-for-each-layer">Care for each layer</h2></div>
         </div>
-        <dl class="learn-list">
+        <dl class="care-grid">
           <div>
             <dt>Pillow</dt>
             <dd>
@@ -384,7 +391,9 @@
       <section class="wrap section">
         <div class="retail-callout">
           <div>
-            <h2>Find the mattress underneath</h2>
+            <h2 id="find-the-mattress-underneath">
+              Find the mattress underneath
+            </h2>
             <p>
               Match your protector pocket and fitted sheet to both the mattress
               dimensions and the height.
@@ -403,7 +412,7 @@
       <div class="wrap footer-grid">
         <div>
           <a class="brand" href="../index.html">
-            <span data-icon="layers"> </span>
+            <span data-icon="fold"> </span>
             <span>Fold <i>&amp;</i> Field</span>
           </a>
           <p>Mattresses, pillows &amp; bedding</p>
@@ -423,6 +432,7 @@
         </div>
         <div>
           <h3>Visit &amp; support</h3>
+          <a href="../documentation/asset-credits.html">Photography credits</a>
           <a class="" href="../pages/trial-returns.html">Trial & Returns</a>
           <a class="" href="../pages/contact.html">Contact</a>
           <a class="" href="../pages/contact.html#visit">Plan a visit</a>
@@ -435,7 +445,7 @@
       aria-label="Back to top"
       data-icon="up"
     ></button>
-    <script type="module" src="../assets/js/main.js?v=2"></script>
-    <script type="module" src="../assets/js/catalogue.js?v=2"></script>
+    <script type="module" src="../assets/js/main.js?v=3"></script>
+    <script type="module" src="../assets/js/catalogue.js?v=3"></script>
   </body>
 </html>

@@ -2,11 +2,11 @@ import {
   mattresses,
   featuredMattressIds,
   guidedMattressIds,
-} from "./products-data.js?v=2";
-import { bedding } from "./bedding-data.js?v=2";
-import { page, money } from "./site-config.js?v=2";
-import { showDetail, productImage } from "./product-details.js?v=2";
-import { mountComparison } from "./comparison.js?v=2";
+} from "./products-data.js?v=3";
+import { bedding } from "./bedding-data.js?v=3";
+import { page, money } from "./site-config.js?v=3";
+import { showDetail, productImage } from "./product-details.js?v=3";
+import { mountComparison } from "./comparison.js?v=3";
 
 const currentPage = document.body.dataset.page;
 const products = currentPage === "bedding" ? bedding : mattresses;
@@ -45,7 +45,11 @@ document.querySelectorAll("[data-sizes]").forEach((target) => {
       const variant = mattresses
         .flatMap((p) => p.variants)
         .find((v) => v.size === size);
-      return `<a href="${page("products")}?size=${encodeURIComponent(size)}#catalogue"><h3>${size}</h3><span>${variant.dimensions} cm</span><small>Example model size</small></a>`;
+      const [width, length] = variant.dimensions.split(" × ").map(Number);
+      const outline = target.classList.contains("guide-size-selector")
+        ? `<span class="size-outline" aria-hidden="true" style="--bed-width:${width * 0.32}px;--bed-length:${length * 0.32}px"></span>`
+        : "";
+      return `<a href="${page("products")}?size=${encodeURIComponent(size)}#catalogue">${outline}<h3>${size}</h3><span><bdi dir="ltr">${variant.dimensions} cm</bdi></span><small>Example dimensions</small></a>`;
     })
     .join("");
 });
@@ -70,13 +74,18 @@ function render(items, target, size = "", canCompare = false) {
           ? [p.firmness, p.thickness]
           : [p.loft, p.shape].filter(Boolean);
       const price = money(indicatedPrice(p, size));
+      const curation = target.classList.contains("curation");
       return `<article class="card">
       <div class="product-img">${productImage(p, true)}</div>
       <div class="card-body">
         <div class="eyebrow">${p.type}</div>
         <h3>${p.name}</h3>
-        <p class="card-spec">${[p.subtype || p.material, ...specs].join(" · ")}</p>
-        <small>${p.variants.map((v) => v.size).join(" · ")}</small>
+        ${
+          curation
+            ? ""
+            : `<p class="card-spec">${[p.subtype || p.material, ...specs].join(" · ")}</p>
+        <small>${p.variants.map((v) => v.size).join(" · ")}</small>`
+        }
         <div class="card-foot"><strong>${size ? price : "From " + price}</strong>
           <button class="text-link" type="button" data-id="${p.id}" aria-label="View details for ${p.name}">View details</button></div>
         ${canCompare ? `<label class="compare-choice"><input type="checkbox" value="${p.id}" aria-label="Compare ${p.name}">Compare</label>` : ""}
@@ -88,21 +97,63 @@ function render(items, target, size = "", canCompare = false) {
     target.innerHTML =
       '<div class="empty"><h3>No matching products</h3><p>Change your selection or clear the filters to see the full collection.</p></div>';
   }
+  bindDetails(target, () => size);
+  if (canCompare) comparison.bind(target);
+}
+
+function bindDetails(target, selectedSize) {
   target.querySelectorAll("button[data-id]").forEach((button) => {
     button.onclick = () =>
-      showDetail(byId.get(button.dataset.id), size, button);
+      showDetail(byId.get(button.dataset.id), selectedSize(), button);
   });
-  if (canCompare) comparison.bind(target);
+}
+
+function renderGuide(target) {
+  const models = guidedMattressIds.map((id) => byId.get(id));
+  target.classList.remove("cards");
+  target.innerHTML = `<label class="guide-size">Price by size
+    <select><option value="">Starting price</option></select></label>
+    <div class="guide-models">${models
+      .map(
+        (p) => `<article>
+      <div class="product-img">${productImage(p, true)}</div>
+      <div class="guide-specs">
+        <h3>${p.name}</h3>
+        <dl><dt>Feel</dt><dd>${p.firmness}</dd>
+        <dt>Build</dt><dd>${p.subtype}</dd>
+        <dt>Height</dt><dd>${p.thickness}</dd></dl>
+        <div class="card-foot"><strong data-price="${p.id}" aria-live="polite"></strong>
+        <button class="text-link" type="button" data-id="${p.id}" aria-label="View details for ${p.name}">View details</button></div>
+      </div></article>`,
+      )
+      .join("")}</div>`;
+  const sizeField = target.querySelector("select");
+  fillOptions(sizeField, sizesFor(models));
+  function updatePrices() {
+    const size = sizeField.value;
+    target.querySelectorAll("[data-price]").forEach((label) => {
+      const p = byId.get(label.dataset.price);
+      const variant = p.variants.find((v) => v.size === size);
+      label.textContent = size
+        ? variant
+          ? money(variant.price)
+          : "Size not offered"
+        : "From " + money(indicatedPrice(p));
+    });
+  }
+  sizeField.onchange = updatePrices;
+  updatePrices();
+  bindDetails(target, () => sizeField.value);
 }
 
 const featured = document.querySelector("#featured");
 if (featured) {
-  render(
-    (currentPage === "home2" ? guidedMattressIds : featuredMattressIds).map(
-      (id) => byId.get(id),
-    ),
-    featured,
-  );
+  if (currentPage === "home2") renderGuide(featured);
+  else
+    render(
+      featuredMattressIds.map((id) => byId.get(id)),
+      featured,
+    );
 }
 document.querySelectorAll("[data-curated]").forEach((target) => {
   render(

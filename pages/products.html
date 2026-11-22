@@ -8,16 +8,16 @@
       name="description"
       content="Explore Fold &amp; Field mattresses, bedding and guides to bedroom comfort."
     />
-    <link rel="icon" href="../assets/icons/fold.svg?v=2" />
-    <script src="../assets/js/preferences.js?v=2"></script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=2" />
+    <link rel="icon" href="../assets/icons/fold.svg?v=3" />
+    <script src="../assets/js/preferences.js?v=3"></script>
+    <link rel="stylesheet" href="../assets/css/style.css?v=3" />
   </head>
   <body data-page="products">
     <a class="skip" href="#main">Skip to content</a>
     <header>
       <div class="wrap bar">
         <a class="brand" href="../index.html">
-          <span data-icon="layers"> </span>
+          <span data-icon="fold"> </span>
           <span>Fold <i>&amp;</i> Field</span>
         </a>
         <nav class="desktop">
@@ -65,7 +65,7 @@
     <dialog id="drawer" aria-label="Navigation menu">
       <div class="drawer-top">
         <a class="brand" href="../index.html">
-          <span data-icon="layers"> </span>
+          <span data-icon="fold"> </span>
           <span>Fold <i>&amp;</i> Field</span>
         </a>
         <button
@@ -108,7 +108,7 @@
       <section class="wrap catalog-hero">
         <div class="intro">
           <p class="eyebrow">The mattress collection</p>
-          <h1>Mattresses</h1>
+          <h1 id="mattresses">Mattresses</h1>
           <p>
             Compare spring, memory foam and firm support constructions. Filter
             to the sizes that fit your bed.
@@ -128,7 +128,7 @@
       </section>
       <section class="wrap section retail-section">
         <div class="section-head">
-          <div><h2>Browse by construction</h2></div>
+          <div><h2 id="browse-by-construction">Browse by construction</h2></div>
         </div>
         <div class="category-grid">
           <a
@@ -169,7 +169,7 @@
       </section>
       <section id="catalogue" class="wrap catalog">
         <div class="section-head">
-          <div><h2>Shop mattresses</h2></div>
+          <div><h2 id="shop-mattresses">Shop mattresses</h2></div>
         </div>
         <form class="filters" data-filter>
           <label
@@ -200,8 +200,8 @@
         <div class="result-bar">
           <strong id="count" role="status"></strong
           ><span
-            >Illustrative catalogue · Indicative INR prices · Representative
-            photos</span
+            >Prices are indicative. Confirm specifications and availability with
+            the store.</span
           >
         </div>
         <div id="comparison"></div>
@@ -210,11 +210,8 @@
       <section class="wrap section retail-section">
         <div class="section-head">
           <div>
-            <h2>Understand mattress layers</h2>
-            <p>
-              Illustrative layer sequence. Construction and layer count vary by
-              model.
-            </p>
+            <h2 id="construction-layers">Understand mattress layers</h2>
+            <p>The order and number of layers vary by model.</p>
           </div>
         </div>
         <div class="editorial-grid layer-guide">
@@ -227,18 +224,7 @@
               loading="lazy"
               decoding="async"
             />
-            <figcaption>
-              Example of layered construction.
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Mattress-coconutfibre%2Bfoam%2Bhemp-_and_sheepwool_PNr%C2%B00085.jpg"
-                >D-Kuru/Wikimedia Commons</a
-              >
-              ·
-              <a href="https://creativecommons.org/licenses/by-sa/3.0/at/"
-                >CC BY-SA 3.0 AT</a
-              >
-              · resized WebP
-            </figcaption>
+            <figcaption>Foam and fibre mattress layers</figcaption>
           </figure>
           <ol class="mattress-layers">
             <li>
@@ -272,7 +258,7 @@
       <section id="sizes" class="wrap section retail-section">
         <div class="section-head">
           <div>
-            <h2>Mattress size guide</h2>
+            <h2 id="mattress-size-guide">Mattress size guide</h2>
             <p>
               These are example dimensions from the collection. Verify your
               frame’s inside measurements.
@@ -283,10 +269,12 @@
       </section>
       <section class="wrap section retail-section">
         <div class="section-head">
-          <div><h2>Add your finishing layers</h2></div>
+          <div>
+            <h2 id="add-your-finishing-layers">Add your finishing layers</h2>
+          </div>
         </div>
         <div
-          class="cards"
+          class="cards finishing-cards"
           data-curated="everyday-protector contour-pillow pillow-protector-pair"
         ></div>
         <div class="actions">
@@ -298,7 +286,7 @@
       <section class="wrap section">
         <div class="retail-callout">
           <div>
-            <h2>Ready to compare in person?</h2>
+            <h2 id="ready-to-compare-in-person">Ready to compare in person?</h2>
             <p>
               Choose a model and size from its details or start a general store
               visit request.
@@ -316,7 +304,7 @@
       <div class="wrap footer-grid">
         <div>
           <a class="brand" href="../index.html">
-            <span data-icon="layers"> </span>
+            <span data-icon="fold"> </span>
             <span>Fold <i>&amp;</i> Field</span>
           </a>
           <p>Mattresses, pillows &amp; bedding</p>
@@ -336,6 +324,7 @@
         </div>
         <div>
           <h3>Visit &amp; support</h3>
+          <a href="../documentation/asset-credits.html">Photography credits</a>
           <a class="" href="../pages/trial-returns.html">Trial & Returns</a>
           <a class="" href="../pages/contact.html">Contact</a>
           <a class="" href="../pages/contact.html#visit">Plan a visit</a>
@@ -348,7 +337,7 @@
       aria-label="Back to top"
       data-icon="up"
     ></button>
-    <script type="module" src="../assets/js/main.js?v=2"></script>
-    <script type="module" src="../assets/js/catalogue.js?v=2"></script>
+    <script type="module" src="../assets/js/main.js?v=3"></script>
+    <script type="module" src="../assets/js/catalogue.js?v=3"></script>
   </body>
 </html>

@@ -6,58 +6,97 @@ export const mattressSizes = {
   King: "183 × 198",
 };
 
-// Dimensions and descriptions of the representative photographs.
+// Detail image dimensions, alternative text and card crop dimensions.
 const photographs = {
-  "boxspring-mattress": [
-    1100,
-    688,
-    "Cream mattress and box spring set",
-    {
-      author: "Yahquinn",
-      source:
-        "https://commons.wikimedia.org/wiki/File:Shifman_Mattress_Set.JPG",
-      license: "CC BY-SA 3.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
-    },
-  ],
-  "pillowtop-mattress": [
-    1100,
-    1073,
-    "Tufted pillow-top mattress",
-    {
-      author: "Jeffrey M. Vinocur",
-      source: "https://commons.wikimedia.org/wiki/File:Pillowtop-mattress.jpg",
-      license: "CC BY 2.5",
-      licenseUrl: "https://creativecommons.org/licenses/by/2.5/",
-    },
-  ],
   spring: [
     1100,
     941,
-    "A neatly made bed with a patterned mattress and pillows",
+    "A quilted mattress with a blue side panel and cream pillows",
+    900,
+    600,
   ],
-  "spring-surface": [1100, 733, "Close-up of a white quilted mattress texture"],
-  "mattress-edge": [
-    733,
+  "hearth-coil": [
+    1200,
+    675,
+    "A quilted spring mattress with deep side panels",
+    900,
+    600,
+  ],
+  "boxspring-mattress": [
     1100,
-    "Close-up of a dark gray mattress with white bedding",
+    688,
+    "Cream mattress and box-spring set",
+    900,
+    600,
+  ],
+  "sable-latex-showroom": [
+    1200,
+    675,
+    "A latex mattress with a tufted cream cover",
+    900,
+    600,
+  ],
+  "willow-memory": [
+    1200,
+    900,
+    "A white foam mattress on a bed frame",
+    900,
+    600,
+  ],
+  "loam-gel-mattress": [
+    1200,
+    900,
+    "A foam mattress with a white cover and coloured piping",
+    900,
+    600,
+  ],
+  "drift-foam-mattress": [
+    1156,
+    565,
+    "Side profile of a foam mattress with a white top and grey border",
+    848,
+    565,
+  ],
+  "vale-foam-layers": [
+    1200,
+    675,
+    "Cutaway view of foam mattress layers",
+    900,
+    600,
+  ],
+  "ridge-foam-reference": [
+    1200,
+    900,
+    "A foam mattress with a white top and grey side panel",
+    900,
+    600,
   ],
   "support-surface": [
     1100,
     1100,
-    "Close-up of a quilted mattress surface with hexagonal pattern",
+    "Close view of a patterned quilted mattress cover",
+    900,
+    600,
   ],
-  foam: [733, 1100, "Close-up of a quilted mattress with dark sides"],
-  "foam-surface": [733, 1100, "Close-up of a white quilted mattress top"],
-  support: [
+  "pillowtop-mattress": [
     1100,
-    733,
-    "Close-up of a modern mattress with a dark patterned base",
+    1073,
+    "A white tufted pillow-top mattress",
+    900,
+    600,
+  ],
+  "dual-face-mattress": [
+    1200,
+    675,
+    "A mattress lifted to show both faces",
+    900,
+    600,
   ],
 };
 
 function mattress({ image, prices, dimensions = mattressSizes, ...model }) {
-  const [imageWidth, imageHeight, imageAlt, imageCredit] = photographs[image];
+  const [imageWidth, imageHeight, imageAlt, cardImageWidth, cardImageHeight] =
+    photographs[image];
   return {
     productGroup: "mattress",
     ...model,
@@ -65,7 +104,9 @@ function mattress({ image, prices, dimensions = mattressSizes, ...model }) {
     imageWidth,
     imageHeight,
     imageAlt,
-    imageCredit,
+    cardImage: "retail/" + image + "-card",
+    cardImageWidth,
+    cardImageHeight,
     variants: Object.entries(prices).map(([size, price]) => ({
       size,
       price,
@@ -106,7 +147,7 @@ export const mattresses = [
     subtype: "Bonnell Spring",
     firmness: "Firm",
     thickness: "17 cm",
-    image: "spring-surface",
+    image: "hearth-coil",
     material: "Connected steel coils, felt insulator and fibre quilting",
     construction:
       "Linked hourglass coils flex together beneath a felt pad and quilted cover.",
@@ -141,7 +182,7 @@ export const mattresses = [
     subtype: "Latex Hybrid",
     firmness: "Medium",
     thickness: "26 cm",
-    image: "support-surface",
+    image: "sable-latex-showroom",
     material: "Perforated latex foam, pocket springs and stretch-knit cover",
     construction:
       "A spring core sits under a perforated layer of resilient latex foam.",
@@ -158,7 +199,7 @@ export const mattresses = [
     subtype: "Classic Memory Foam",
     firmness: "Plush",
     thickness: "18 cm",
-    image: "foam",
+    image: "willow-memory",
     material: "Viscoelastic polyurethane, dense base foam and knit ticking",
     construction:
       "A slow-recovery comfort layer rests on a dense foam support base.",
@@ -175,7 +216,7 @@ export const mattresses = [
     subtype: "Gel-Infused Memory Foam",
     firmness: "Plush",
     thickness: "22 cm",
-    image: "foam-surface",
+    image: "loam-gel-mattress",
     material: "Gel-infused viscoelastic foam, base foam and stretch knit",
     construction:
       "A gel-infused memory foam comfort layer sits over a firmer polyurethane base.",
@@ -191,7 +232,7 @@ export const mattresses = [
     subtype: "Open-Cell Memory Foam",
     firmness: "Medium",
     thickness: "21 cm",
-    image: "foam",
+    image: "drift-foam-mattress",
     material:
       "Open-cell memory foam, polyurethane foam and mesh-knit side panels",
     construction:
@@ -208,7 +249,7 @@ export const mattresses = [
     subtype: "Layered Memory Foam",
     firmness: "Medium",
     thickness: "24 cm",
-    image: "mattress-edge",
+    image: "vale-foam-layers",
     material:
       "Memory foam, resilient transition foam and high-density base foam",
     construction:
@@ -226,7 +267,7 @@ export const mattresses = [
     subtype: "Firm Support Foam",
     firmness: "Firm",
     thickness: "22 cm",
-    image: "support",
+    image: "ridge-foam-reference",
     material: "Firm polyurethane foam and quilted stretch-knit cover",
     construction:
       "A thin quilted layer sits on firm comfort foam and a dense support core.",
@@ -276,7 +317,7 @@ export const mattresses = [
     subtype: "Reversible Foam",
     firmness: "Firm",
     thickness: "20 cm",
-    image: "support",
+    image: "dual-face-mattress",
     material:
       "Medium and firm polyurethane comfort layers around a dense central core",
     construction:

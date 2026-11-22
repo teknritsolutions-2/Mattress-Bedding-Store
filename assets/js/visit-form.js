@@ -1,6 +1,6 @@
-import { mattresses } from "./products-data.js?v=2";
-import { bedding } from "./bedding-data.js?v=2";
-import { store } from "./site-config.js?v=2";
+import { mattresses } from "./products-data.js?v=3";
+import { bedding } from "./bedding-data.js?v=3";
+import { store } from "./site-config.js?v=3";
 const form = document.querySelector("#visit-form");
 const fields = form.elements;
 const review = document.querySelector("#review");

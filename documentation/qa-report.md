@@ -1,8 +1,34 @@
-# Fold & Field storefront makeover
+# Fold & Field visual correction
+
+The comparison baseline is Git commit `eb41f299`. The supplied attachment contained the written descriptions of the 15 visual findings. It did not include the screenshot files. New before captures were rendered directly from the preserved commit.
+
+| Area | Correction |
+| --- | --- |
+| Brand and colour | Porcelain and cool gray in light mode, graphite and slate in dark mode, and restrained steel-blue accents. The folded-F SVG is used in the header, compact drawer, footer and favicon. |
+| Photography | 28 different model references with composed 3:2 card assets and wider detail originals. Selected full-form photography for the featured mattresses, distinct contour and latex pillow imagery, and material-specific bedding views. The public credits record all 44 source photos and their modifications. |
+| Home 1 | Shorter retail hero, four aligned featured cards, full-width construction showcase, compact room picks, care grid and visit checklist. |
+| Home 2 | Proportional size outlines, linked comfort choices, model specification rows with size-specific prices, a five-step bedding sequence and a compact construction matrix. |
+| Mattresses and bedding | Broader mattress cards, responsive catalogue columns, aligned specifications and prices, selected comparison states, a panoramic bedding banner, a fabric guide and a coordinated bedding strip. |
+| About, policies and contact | Linked fit decisions, a short checklist, grouped policy questions and easier-to-scan enquiry paths. |
+| Public copy | Concise captions and one indicative-pricing note per catalogue. Licensing details are accessible from the footer and product detail dialogs. |
+
+## Verification
+
+Browser checks ran in Playwright with Brave. The revised site and baseline were served locally under separate project-style subpaths.
+
+- Rendered before and after captures of all seven storefront pages at 390, 768 and 1440 px and took individual before and after captures for the 15 described findings. The full-page captures included mobile dark RTL, tablet light LTR and desktop light LTR.
+- Ran overflow and display preference checks across all seven pages at 320, 360, 390, 425, 430, 768, 820, 960, 1024, 1180, 1280, 1440 and 1920 px, in all four theme and direction combinations.
+- Ran mattress and bedding customer journeys at 390, 820 and 1440 px. Checked filters, price sorting, variant dimensions and pricing, three-model comparison, enquiry preselection, validation, review, editing, copy and download. Also checked the Home 2 price selector, navigation, policy accordions, back-to-top, and persisted display settings.
+- Compared catalogue records with the baseline. All 12 mattress and 16 bedding records retained their original specifications, care guidance and price variants. Confirmed unique primary photo files and matching intrinsic image dimensions.
+- Product photography represents the category or material. Final specifications, inventory and prices require confirmation from the store.
+
+---
+
+## Previous storefront release
 
 The original release is preserved in Git at commit `09dfb6b`. The makeover retains the seven-page static architecture and all seven original product IDs. The new retail palette uses charcoal (#24262b), off-white (#fafaf8) and terracotta (#a34832), with peach accents in dark mode. Self-hosted DM Sans now covers headings and body text.
 
-## Pages and shopping tools
+### Pages and shopping tools
 
 | Page | Changes |
 | --- | --- |
@@ -14,13 +40,13 @@ The original release is preserved in Git at commit `09dfb6b`. The makeover retai
 | Trial & Returns | Preserved the disclosures and added a four-step enquiry process, product-specific questions and a preselected policy enquiry. |
 | Contact | Photo-led introduction, five enquiry pathways, visit preparation tips, FAQs and the editable request review with copy and download. |
 
-## Photography and research
+### Photography and research
 
 Removed all eleven AI-generated photos and the responsive derivative. The site uses 35 distinct photographs from Unsplash and Wikimedia Commons. Example products use representative imagery, including real mattress surfaces and photographed construction examples. The [asset inventory](asset-credits.md) records source pages, photographer, license, dimensions, modifications and placement.
 
 [Construction and textile research](technology.md) covers linked Bonnell springs, individually wrapped coils, hybrids, latex, gel and open-cell memory foam, zoned and reinforced support, pillow loft and fill, passive cooling textiles, and bedding fabrics.
 
-## Browser verification
+### Browser verification
 
 - Used Playwright with Brave against a local static HTTP server at the repository-style subpath `/mattress-store/`.
 - Checked all seven pages at 320, 360, 390, 425, 430, 768, 820, 960, 1024, 1180, 1280, 1440 and 1920 px in light and dark themes, in both LTR and RTL. Checked horizontal overflow and captured mobile, tablet, desktop and full-page screenshots for visual review.
@@ -30,6 +56,6 @@ Removed all eleven AI-generated photos and the responsive derivative. The site u
 - Exercised the desktop Home menu, compact drawer’s physical-left position in both directions, Escape, policy disclosures and enquiry preselection, back-to-top, and theme and direction persistence across pages.
 - Decoded the images across all seven pages and checked for broken HTTP requests and uncaught browser errors.
 
-## Business details
+### Business details
 
 Models, variant specifications and INR prices are illustrative. Store contact information, inventory, final prices, eligibility, trial and return terms, and warranty details require confirmation from the business. The form prepares a request on the visitor’s device for sharing with the store.

@@ -1,7 +1,12 @@
-import { root, page, money } from "./site-config.js?v=2";
+import { root, page, money } from "./site-config.js?v=3";
 
-export function productImage(product, lazy = false) {
-  return `<img ${lazy ? 'loading="lazy"' : ""} width="${product.imageWidth || 900}" height="${product.imageHeight || 600}" src="${root}assets/images/${product.image}.webp" alt="${product.imageAlt || "Representative product photograph"}">`;
+export function productImage(product, card = false) {
+  const image = card && product.cardImage ? product.cardImage : product.image;
+  const width =
+    card && product.cardImage ? product.cardImageWidth : product.imageWidth;
+  const height =
+    card && product.cardImage ? product.cardImageHeight : product.imageHeight;
+  return `<img ${card ? 'loading="lazy"' : ""} width="${width}" height="${height}" src="${root}assets/images/${image}.webp" alt="${product.imageAlt}">`;
 }
 
 export function dismissDialog(dialog, trigger) {
@@ -31,10 +36,6 @@ export function showDetail(product, preferredSize, trigger) {
   const dialog = document.createElement("dialog");
   dialog.className = "detail";
   dialog.setAttribute("aria-labelledby", "detail-name");
-  const credit = product.imageCredit;
-  const attribution = credit
-    ? ` · <a href="${credit.source}">${credit.author}</a> · <a href="${credit.licenseUrl}">${credit.license}</a> · resized WebP`
-    : "";
   const specs = [
     ["Construction", product.construction],
     ["Materials", product.material],
@@ -47,7 +48,7 @@ export function showDetail(product, preferredSize, trigger) {
     ["Care", product.care],
   ];
   dialog.innerHTML = `<button class="dialog-close tool" type="button" aria-label="Close details">×</button>
-    <figure>${productImage(product)}<figcaption>Representative photograph${attribution}</figcaption></figure>
+    <figure>${productImage(product)}<figcaption>Product image for reference · <a href="${root}documentation/asset-credits.html">Photography credits</a></figcaption></figure>
     <div class="detail-body"><div class="eyebrow">${[product.type, product.subtype].filter(Boolean).join(" · ")}</div>
       <h2 id="detail-name">${product.name}</h2><p>${product.description}</p>
       <label>Choose size<select></select></label>

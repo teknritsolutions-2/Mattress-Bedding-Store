@@ -3,33 +3,83 @@ function option(size, dimensions, price) {
   return { size, dimensions, price };
 }
 
-// Dimensions and descriptions of the representative photographs.
+// Detail image dimensions, alternative text and card crop dimensions.
 const photographs = {
-  pillow: [1100, 826, "White bed pillow on bed"],
-  "pillow-profile": [828, 1100, "A white pillow shown in profile"],
-  "pillow-stack": [
-    868,
-    1100,
-    "A stack of pillows sitting on top of a wooden table",
+  pillow: [1100, 826, "Soft white pillows on a bed", 900, 600],
+  "contour-foam-pillow": [
+    1200,
+    675,
+    "Profile of a contoured foam pillow with two raised edges",
+    900,
+    600,
   ],
-  "pillow-soft": [1100, 733, "White bed pillow on brown wooden bed frame"],
-  "pillow-layers": [825, 1100, "Three assorted-color pillows"],
-  sheets: [733, 1100, "A rumpled white bed with pillows"],
-  "white-sheets": [
+  "adjustable-pillow-layers": [
+    1200,
+    717,
+    "An open pillow cover revealing removable layers",
+    900,
+    600,
+  ],
+  "air-latex-reference": [
+    680,
+    320,
+    "A covered latex pillow photographed on a white background",
+    680,
+    453,
+  ],
+  "cooling-pillow-cover": [
+    1200,
+    675,
+    "Close detail of a perforated pillow cover",
+    900,
+    600,
+  ],
+  "firm-pillow-pair": [
+    1200,
+    660,
+    "Two thick gusseted pillows stacked together",
+    900,
+    600,
+  ],
+  "percale-cotton-sheets": [
+    1200,
+    900,
+    "Crisp cotton percale sheets on a bed",
+    900,
+    600,
+  ],
+  "white-sheets": [733, 1100, "White sheets spread across a bed", 732, 488],
+  "linen-sheets": [734, 1100, "Soft folds in a light woven sheet", 734, 489],
+  pillowcase: [733, 1100, "A white pillowcase on a pillow", 732, 488],
+  duvet: [825, 1100, "Close view of stitched white duvet panels", 825, 550],
+  "light-duvet": [733, 1100, "White comforter with folded edges", 732, 488],
+  "quilted-duvet": [
+    1100,
     733,
-    1100,
-    "A neatly made bed with white linens and pillows",
+    "Close view of a stitched geometric quilt",
+    900,
+    600,
   ],
-  "linen-sheets": [734, 1100, "A close up of a bed with a white sheet"],
-  pillowcase: [733, 1100, "A close up of a bed with white sheets and pillows"],
-  duvet: [825, 1100, "A close up of a bed with a white comforter"],
-  "light-duvet": [733, 1100, "A rumpled white duvet and pillows on a bed"],
-  "quilted-duvet": [1100, 733, "White and gray floral textile"],
-  protector: [1100, 733, "A fitted quilted layer on a mattress"],
+  protector: [1100, 733, "Fitted quilted layer on a mattress", 900, 600],
+  madrasskydd: [
+    900,
+    1200,
+    "A fitted terry mattress protector on a bed corner",
+    900,
+    600,
+  ],
+  "zippered-pillow-cover": [
+    1200,
+    675,
+    "A zipper on a white pillow cover",
+    900,
+    600,
+  ],
 };
 
 function beddingItem({ image, ...item }) {
-  const [imageWidth, imageHeight, imageAlt] = photographs[image];
+  const [imageWidth, imageHeight, imageAlt, cardImageWidth, cardImageHeight] =
+    photographs[image];
   return {
     productGroup: "bedding",
     ...item,
@@ -37,6 +87,9 @@ function beddingItem({ image, ...item }) {
     imageWidth,
     imageHeight,
     imageAlt,
+    cardImage: "retail/" + image + "-card",
+    cardImageWidth,
+    cardImageHeight,
   };
 }
 
@@ -60,7 +113,7 @@ export const bedding = [
     id: "contour-pillow",
     name: "Cove Contour Pillow",
     type: "Pillows",
-    image: "pillow-profile",
+    image: "contour-foam-pillow",
     material: "Moulded solid memory foam with a removable stretch-knit cover",
     fill: "Solid memory foam",
     loft: "Medium",
@@ -79,7 +132,7 @@ export const bedding = [
     id: "tune-adjustable-pillow",
     name: "Tune Adjustable Pillow",
     type: "Pillows",
-    image: "pillow-stack",
+    image: "adjustable-pillow-layers",
     material: "Shredded memory foam, polyester fibre and cotton-blend cover",
     fill: "Shredded memory foam",
     loft: "Adjustable",
@@ -98,7 +151,7 @@ export const bedding = [
     id: "air-latex-pillow",
     name: "Air Latex Pillow",
     type: "Pillows",
-    image: "pillow-soft",
+    image: "air-latex-reference",
     material: "Perforated latex foam with a cotton-blend zip cover",
     fill: "Latex",
     loft: "Medium",
@@ -117,7 +170,7 @@ export const bedding = [
     id: "tempo-cover-pillow",
     name: "Tempo Cover Pillow",
     type: "Pillows",
-    image: "pillow-layers",
+    image: "cooling-pillow-cover",
     material: "Memory foam core and knit cover with phase-change material",
     fill: "Solid memory foam",
     loft: "Medium",
@@ -136,7 +189,7 @@ export const bedding = [
     id: "span-support-pillow",
     name: "Span Support Pillow",
     type: "Pillows",
-    image: "pillow-stack",
+    image: "firm-pillow-pair",
     material: "Layered polyester fibre with a cotton gusseted shell",
     fill: "Fibre",
     loft: "Medium",
@@ -154,7 +207,7 @@ export const bedding = [
     id: "percale-sheets",
     name: "Percale Sheet Set",
     type: "Sheets",
-    image: "sheets",
+    image: "percale-cotton-sheets",
     material: "Plain-weave cotton percale",
     description: "A crisp sheet set with a smooth, matte finish.",
     features: ["Plain weave", "Fitted sheet with matching pillowcases"],
@@ -273,7 +326,7 @@ export const bedding = [
     id: "dryline-protector",
     name: "Dryline Mattress Protector",
     type: "Protectors",
-    image: "protector",
+    image: "madrasskydd",
     material: "Cotton terry with a polyurethane waterproof membrane",
     description: "The underside has a barrier layer beneath a soft terry face.",
     features: ["Waterproof backing", "Fitted elasticated skirt"],
@@ -289,7 +342,7 @@ export const bedding = [
     id: "pillow-protector-pair",
     name: "Gene Zip Pillow Protectors",
     type: "Protectors",
-    image: "pillowcase",
+    image: "zippered-pillow-cover",
     material: "Cotton-blend woven shell with a zip closure",
     description: "A washable layer that fits under your pillowcase.",
     features: ["Set of two", "Zip closure"],

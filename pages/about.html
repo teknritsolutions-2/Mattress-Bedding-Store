@@ -8,16 +8,16 @@
       name="description"
       content="Explore Fold &amp; Field mattresses, bedding and guides to bedroom comfort."
     />
-    <link rel="icon" href="../assets/icons/fold.svg?v=2" />
-    <script src="../assets/js/preferences.js?v=2"></script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=2" />
+    <link rel="icon" href="../assets/icons/fold.svg?v=3" />
+    <script src="../assets/js/preferences.js?v=3"></script>
+    <link rel="stylesheet" href="../assets/css/style.css?v=3" />
   </head>
   <body data-page="about">
     <a class="skip" href="#main">Skip to content</a>
     <header>
       <div class="wrap bar">
         <a class="brand" href="../index.html">
-          <span data-icon="layers"> </span>
+          <span data-icon="fold"> </span>
           <span>Fold <i>&amp;</i> Field</span>
         </a>
         <nav class="desktop">
@@ -63,7 +63,7 @@
     <dialog id="drawer" aria-label="Navigation menu">
       <div class="drawer-top">
         <a class="brand" href="../index.html">
-          <span data-icon="layers"> </span>
+          <span data-icon="fold"> </span>
           <span>Fold <i>&amp;</i> Field</span>
         </a>
         <button
@@ -104,7 +104,9 @@
       <section class="wrap catalog-hero">
         <div class="intro">
           <p class="eyebrow">About Fold &amp; Field</p>
-          <h1>A store built around the bed</h1>
+          <h1 id="a-store-built-around-the-bed">
+            A store built around the bed
+          </h1>
           <p>
             Explore mattresses and bedding by the specifications that affect
             everyday use, from mattress height to pillow loft and sheet depth.
@@ -122,37 +124,49 @@
           decoding="async"
         />
       </section>
-      <section id="approach" class="wrap section retail-section">
+      <section
+        class="wrap section retail-section"
+        id="approach"
+        aria-labelledby="fit-and-feel"
+      >
         <div class="section-head">
-          <div><h2>Start with fit and feel</h2></div>
+          <div>
+            <h2 id="fit-and-feel">Start with fit and feel</h2>
+            <p>Use three simple checks to narrow your mattress shortlist.</p>
+          </div>
         </div>
-        <dl class="learn-list">
+        <div class="fit-options">
           <div>
-            <dt>Size</dt>
-            <dd>
-              Measure the inside of the frame and check dimensions on the model
-              page. A size name by itself may not tell you the length or width.
-            </dd>
+            <a href="products.html#sizes"
+              ><strong>Size</strong
+              ><span
+                >Measure the inside of your frame and check the model’s exact
+                length and width.</span
+              ></a
+            >
           </div>
           <div>
-            <dt>Construction</dt>
-            <dd>
-              Compare connected springs, individually wrapped coils and layered
-              foams. The core and comfort layers contribute differently to the
-              feel.
-            </dd>
+            <a href="products.html#construction-layers"
+              ><strong>Construction</strong
+              ><span
+                >Compare connected springs, pocket springs and layered
+                foams.</span
+              ></a
+            >
           </div>
           <div>
-            <dt>Firmness</dt>
-            <dd>
-              Use plush, medium and firm as starting points, then compare the
-              comfort layers and base for the feel you prefer.
-            </dd>
+            <a href="home2.html#choose-feel"
+              ><strong>Firmness</strong
+              ><span
+                >Use plush, medium or firm as a starting point, then compare
+                models.</span
+              ></a
+            >
           </div>
-        </dl>
+        </div>
       </section>
       <section class="wrap section retail-section">
-        <div class="editorial-grid">
+        <div class="editorial-grid material-story">
           <figure>
             <img
               src="../assets/images/retail/woven-textile.webp"
@@ -164,7 +178,9 @@
             />
           </figure>
           <div>
-            <h2>Look closely at the materials</h2>
+            <h2 id="look-closely-at-the-materials">
+              Look closely at the materials
+            </h2>
             <p>
               Cover fabric, seam finish and quilting shape the surface you see
               and touch. Compare the materials listed for each item and how they
@@ -178,90 +194,62 @@
           </div>
         </div>
       </section>
-      <section class="wrap section retail-section">
+      <section
+        class="wrap section retail-section"
+        aria-labelledby="complete-bedroom"
+      >
         <div class="section-head">
-          <div><h2>The complete bedroom</h2></div>
+          <div><h2 id="complete-bedroom">The complete bedroom</h2></div>
         </div>
-        <div class="category-grid category-grid--four">
-          <a
-            class="category-tile"
-            href="../pages/products.html?type=Spring#catalogue"
-            ><img
-              src="../assets/images/retail/spring.webp"
-              alt=""
-              width="1100"
-              height="941"
-              loading="lazy"
-              decoding="async"
-            /><span>Spring mattresses</span></a
-          ><a
-            class="category-tile"
-            href="../pages/bedding.html?type=Pillows#catalogue"
-            ><img
-              src="../assets/images/retail/pillow.webp"
-              alt=""
-              width="1100"
-              height="826"
-              loading="lazy"
-              decoding="async"
-            /><span>Pillows</span></a
-          ><a
-            class="category-tile"
-            href="../pages/bedding.html?type=Sheets#catalogue"
-            ><img
-              src="../assets/images/retail/sheets.webp"
-              alt=""
-              width="733"
-              height="1100"
-              loading="lazy"
-              decoding="async"
-            /><span>Sheets</span></a
-          ><a
-            class="category-tile"
-            href="../pages/bedding.html?type=Duvets#catalogue"
-            ><img
-              src="../assets/images/retail/duvet.webp"
-              alt=""
-              width="825"
-              height="1100"
-              loading="lazy"
-              decoding="async"
-            /><span>Duvets &amp; comforters</span></a
+        <ol class="bedroom-plan">
+          <li>
+            <a href="products.html#catalogue"
+              ><strong>Fit the foundation</strong
+              ><span
+                >Start with a mattress that fits the frame and a protector that
+                fits its depth.</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="bedding.html?type=Sheets#catalogue"
+              ><strong>Bring in soft layers</strong
+              ><span
+                >Match the sheet pocket and duvet overhang to the shape of your
+                bed.</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="bedding.html?type=Pillows#catalogue"
+              ><strong>Choose your pillow</strong
+              ><span
+                >Check its height after compression and compare how different
+                fills respond.</span
+              ></a
+            >
+          </li>
+        </ol>
+      </section>
+      <section class="wrap section retail-section" aria-labelledby="shortlist">
+        <div class="section-head">
+          <div><h2 id="shortlist">Shortlist your choices</h2></div>
+        </div>
+        <ul class="shortlist-checks">
+          <li>Compare thickness and price at the same size.</li>
+          <li>Check the required base and care instructions.</li>
+          <li>Add the model and size to your store visit request.</li>
+        </ul>
+        <div class="actions">
+          <a class="outline" href="products.html#catalogue"
+            >Review the mattress collection</a
           >
         </div>
-      </section>
-      <section class="wrap section retail-section">
-        <div class="section-head">
-          <div><h2>Shortlist your choices</h2></div>
-        </div>
-        <dl class="learn-list">
-          <div>
-            <dt>Compare like for like</dt>
-            <dd>
-              Choose a common size on the Mattresses page and check thickness,
-              construction and the indicative price for that size.
-            </dd>
-          </div>
-          <div>
-            <dt>Make a care checklist</dt>
-            <dd>
-              Check how the mattress should be supported, whether the cover is
-              removable, and how its materials are cleaned.
-            </dd>
-          </div>
-          <div>
-            <dt>Review before a visit</dt>
-            <dd>
-              Open a model’s details to carry its selected size into a store
-              visit request.
-            </dd>
-          </div>
-        </dl>
       </section>
       <section class="wrap section">
         <div class="retail-callout">
           <div>
-            <h2>Bring your shortlist</h2>
+            <h2 id="bring-your-shortlist">Bring your shortlist</h2>
             <p>
               Have your measurements and practical questions ready when you
               contact the store.
@@ -279,7 +267,7 @@
       <div class="wrap footer-grid">
         <div>
           <a class="brand" href="../index.html">
-            <span data-icon="layers"> </span>
+            <span data-icon="fold"> </span>
             <span>Fold <i>&amp;</i> Field</span>
           </a>
           <p>Mattresses, pillows &amp; bedding</p>
@@ -297,6 +285,7 @@
         </div>
         <div>
           <h3>Visit &amp; support</h3>
+          <a href="../documentation/asset-credits.html">Photography credits</a>
           <a class="" href="../pages/trial-returns.html">Trial & Returns</a>
           <a class="" href="../pages/contact.html">Contact</a>
           <a class="" href="../pages/contact.html#visit">Plan a visit</a>
@@ -309,6 +298,6 @@
       aria-label="Back to top"
       data-icon="up"
     ></button>
-    <script type="module" src="../assets/js/main.js?v=2"></script>
+    <script type="module" src="../assets/js/main.js?v=3"></script>
   </body>
 </html>
