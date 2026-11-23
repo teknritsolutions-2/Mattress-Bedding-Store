@@ -2,11 +2,11 @@ import {
   mattresses,
   featuredMattressIds,
   guidedMattressIds,
-} from "./products-data.js?v=3";
-import { bedding } from "./bedding-data.js?v=3";
-import { page, money } from "./site-config.js?v=3";
-import { showDetail, productImage } from "./product-details.js?v=3";
-import { mountComparison } from "./comparison.js?v=3";
+} from "./products-data.js?v=4";
+import { bedding } from "./bedding-data.js?v=4";
+import { page, money } from "./site-config.js?v=4";
+import { showDetail, productImage } from "./product-details.js?v=4";
+import { mountComparison } from "./comparison.js?v=4";
 
 const currentPage = document.body.dataset.page;
 const products = currentPage === "bedding" ? bedding : mattresses;

@@ -15,10 +15,10 @@ const photographs = {
     900,
     600,
   ],
-  "hearth-coil": [
-    1200,
-    675,
-    "A quilted spring mattress with deep side panels",
+  "hearth-spring-profile": [
+    1024,
+    768,
+    "Cream spring mattress with a quilted top on a bed frame",
     900,
     600,
   ],
@@ -29,10 +29,10 @@ const photographs = {
     900,
     600,
   ],
-  "sable-latex-showroom": [
-    1200,
-    675,
-    "A latex mattress with a tufted cream cover",
+  "sable-latex-hybrid-bed": [
+    1024,
+    768,
+    "White latex hybrid mattress on a timber bed frame",
     900,
     600,
   ],
@@ -64,19 +64,19 @@ const photographs = {
     900,
     600,
   ],
-  "ridge-foam-reference": [
-    1200,
-    900,
-    "A foam mattress with a white top and grey side panel",
+  "ridge-support-profile": [
+    1024,
+    768,
+    "A foam mattress with a quilted white cover and dark grey border",
     900,
     600,
   ],
-  "support-surface": [
-    1100,
-    1100,
-    "Close view of a patterned quilted mattress cover",
-    900,
-    600,
+  "keel-foam-mattress": [
+    1024,
+    576,
+    "White mattress with a deep grey side panel on a timber bed frame",
+    864,
+    576,
   ],
   "pillowtop-mattress": [
     1100,
@@ -85,10 +85,10 @@ const photographs = {
     900,
     600,
   ],
-  "dual-face-mattress": [
-    1200,
-    675,
-    "A mattress lifted to show both faces",
+  "turn-foam-profile": [
+    1024,
+    768,
+    "Striped cream foam mattress on a dark bed frame",
     900,
     600,
   ],
@@ -147,7 +147,7 @@ export const mattresses = [
     subtype: "Bonnell Spring",
     firmness: "Firm",
     thickness: "17 cm",
-    image: "hearth-coil",
+    image: "hearth-spring-profile",
     material: "Connected steel coils, felt insulator and fibre quilting",
     construction:
       "Linked hourglass coils flex together beneath a felt pad and quilted cover.",
@@ -182,7 +182,7 @@ export const mattresses = [
     subtype: "Latex Hybrid",
     firmness: "Medium",
     thickness: "26 cm",
-    image: "sable-latex-showroom",
+    image: "sable-latex-hybrid-bed",
     material: "Perforated latex foam, pocket springs and stretch-knit cover",
     construction:
       "A spring core sits under a perforated layer of resilient latex foam.",
@@ -267,7 +267,7 @@ export const mattresses = [
     subtype: "Firm Support Foam",
     firmness: "Firm",
     thickness: "22 cm",
-    image: "ridge-foam-reference",
+    image: "ridge-support-profile",
     material: "Firm polyurethane foam and quilted stretch-knit cover",
     construction:
       "A thin quilted layer sits on firm comfort foam and a dense support core.",
@@ -283,7 +283,7 @@ export const mattresses = [
     subtype: "Zoned Support Foam",
     firmness: "Firm",
     thickness: "23 cm",
-    image: "support-surface",
+    image: "keel-foam-mattress",
     material: "Profiled polyurethane foam, dense base foam and stretch knit",
     construction:
       "Shallower channels through the centre make that area firmer than the outer zones.",
@@ -317,7 +317,7 @@ export const mattresses = [
     subtype: "Reversible Foam",
     firmness: "Firm",
     thickness: "20 cm",
-    image: "dual-face-mattress",
+    image: "turn-foam-profile",
     material:
       "Medium and firm polyurethane comfort layers around a dense central core",
     construction:

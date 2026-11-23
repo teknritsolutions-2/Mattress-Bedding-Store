@@ -1,4 +1,4 @@
-import { root, page, money } from "./site-config.js?v=3";
+import { root, page, money } from "./site-config.js?v=4";
 
 export function productImage(product, card = false) {
   const image = card && product.cardImage ? product.cardImage : product.image;
@@ -47,17 +47,26 @@ export function showDetail(product, preferredSize, trigger) {
     ["Features", product.features?.join(" · ")],
     ["Care", product.care],
   ];
-  dialog.innerHTML = `<button class="dialog-close tool" type="button" aria-label="Close details">×</button>
-    <figure>${productImage(product)}<figcaption>Product image for reference · <a href="${root}documentation/asset-credits.html">Photography credits</a></figcaption></figure>
-    <div class="detail-body"><div class="eyebrow">${[product.type, product.subtype].filter(Boolean).join(" · ")}</div>
-      <h2 id="detail-name">${product.name}</h2><p>${product.description}</p>
-      <label>Choose size<select></select></label>
-      <p class="variant" aria-live="polite"></p><a class="btn">Plan a visit for this item</a>
+  dialog.innerHTML = `<div class="detail-toolbar"><button class="tool detail-close" type="button" aria-label="Close details">×</button></div>
+    <div class="detail-layout">
+      <figure>${productImage(product)}</figure>
+      <div class="detail-body">
+        <div class="eyebrow">${[product.type, product.subtype].filter(Boolean).join(" · ")}</div>
+        <h2 id="detail-name">${product.name}</h2><p>${product.description}</p>
+        <label>Choose size<select></select></label>
+        <p class="variant" aria-live="polite" dir="ltr"></p>
+        <a class="btn">Plan a visit for this item</a>
+      </div>
+    </div>
+    <section class="detail-specs" aria-labelledby="detail-specs-title">
+      <h3 id="detail-specs-title">Specifications &amp; care</h3>
       <dl>${specs
         .filter(([, value]) => value)
-        .map(([label, value]) => `<dt>${label}</dt><dd>${value}</dd>`)
+        .map(
+          ([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`,
+        )
         .join("")}</dl>
-    </div>`;
+    </section>`;
   const select = dialog.querySelector("select");
   product.variants.forEach((v) => select.add(new Option(v.size, v.size)));
   if (product.variants.some((v) => v.size === preferredSize))

@@ -577,6 +577,8 @@ dd {
   margin: 0 0 0.7rem;
   color: var(--muted);
   overflow-wrap: anywhere;
+}
+#review dd {
   white-space: pre-line;
 }
 footer {
@@ -600,6 +602,13 @@ footer a:not(.brand) {
   display: block;
   width: fit-content;
   padding: 0.3rem 0;
+}
+.footer-legal {
+  margin-block-start: 1.25rem;
+  padding-block-start: 0.7rem;
+  border-block-start: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.88rem;
 }
 footer p {
   margin-top: 0.7rem;
@@ -657,11 +666,11 @@ dialog::backdrop {
 .detail {
   padding: 0;
   width: min(860px, 94vw);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scroll-padding-block-start: 58px;
   max-height: 90dvh;
   border-radius: 8px;
-}
-.detail-body {
-  padding: 1.5rem;
 }
 .detail h2 {
   font-size: 2.2rem;
@@ -672,6 +681,10 @@ dialog::backdrop {
 .detail .variant {
   margin-block: 0.8rem;
   font-weight: 600;
+  text-align: start;
+}
+[dir="rtl"] .detail .variant {
+  text-align: right;
 }
 .dialog-close {
   position: absolute;
@@ -1064,32 +1077,55 @@ button:disabled {
   border: 1px solid var(--line);
   padding: 1rem;
 }
-.detail[open] {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+.detail-toolbar {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.38rem 0.7rem;
+  background: var(--panel);
 }
-.detail figure {
-  align-self: start;
+.detail-close {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 50%;
+  font-size: 1.6rem;
+}
+.detail-layout {
   display: grid;
-  justify-items: center;
-  padding: 1.25rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.2rem, 3.5vw, 2.3rem);
+  padding: 0 1.25rem 1.5rem;
 }
 .detail figure img {
   width: auto;
-  max-height: 460px;
   height: auto;
+  max-height: min(42dvh, 390px);
+  margin-inline: auto;
   border-radius: 6px;
 }
-.detail dl {
+.detail-body label {
+  margin-block-start: 1rem;
+}
+.detail-specs {
+  padding: 1.25rem;
+  border-block-start: 1px solid var(--line);
+  background: var(--wash);
+}
+.detail-specs dl {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-  gap: 0.5rem 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem 1.8rem;
+  margin-block-end: 0;
 }
-.detail dd {
-  margin: 0;
+.detail-specs dl > div {
+  border-block-start: 1px solid var(--line);
+  padding-block-start: 0.6rem;
 }
-.detail-body {
-  padding-block-start: 3.35rem;
+.detail-specs dd {
+  margin: 0.22rem 0 0;
 }
 .dialog-close {
   z-index: 1;
@@ -1122,6 +1158,38 @@ button:disabled {
   aspect-ratio: 1.48;
   object-fit: cover;
   border-radius: 8px;
+}
+.sleep-care {
+  align-items: stretch;
+  gap: clamp(1.3rem, 3vw, 2.7rem);
+}
+.sleep-care figure {
+  position: relative;
+}
+.sleep-care figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+.sleep-care .care-grid {
+  margin-block-start: 1.3rem;
+}
+.layer-guide {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(1rem, 3vw, 2.6rem);
+}
+.layer-guide figure {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: var(--wash);
+}
+.layer-guide figcaption {
+  margin: 0;
+  text-align: center;
 }
 .editorial-grid .construction-photo img,
 .material-layout .construction-photo img {
@@ -1267,10 +1335,6 @@ button:disabled {
 .bedding-layer-links a:hover {
   color: var(--accent);
 }
-.layer-sequence a span {
-  display: block;
-  text-decoration: none;
-}
 .shortlist-checks {
   list-style: none;
   padding: 0;
@@ -1392,16 +1456,44 @@ button:disabled {
 .layer-sequence {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  padding-inline-start: 1.4rem;
-  gap: 1rem;
+  list-style: none;
+  counter-reset: layer;
+  padding-inline-start: 0;
+  gap: 0.75rem;
 }
 .layer-sequence li {
-  padding: 0.7rem;
-  border-block-start: 2px solid var(--accent);
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  counter-increment: layer;
 }
 .layer-sequence a {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  position: relative;
+  display: block;
+  flex: 1;
+  padding-block: 0.8rem;
+  padding-inline: 2.25rem 0.7rem;
+  border-block-start: 2px solid var(--line);
+  border-radius: 3px;
+  text-decoration: none;
+}
+.layer-sequence a::before {
+  content: counter(layer) ".";
+  direction: ltr;
+  unicode-bidi: isolate;
+  position: absolute;
+  inset-inline-start: 0.65rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+.layer-sequence a span {
+  display: block;
+  margin-block-start: 0.15rem;
+}
+.layer-sequence a:hover,
+.layer-sequence a:focus-visible {
+  background: var(--wash);
+  border-color: var(--accent);
 }
 
 .visit-checklist {
@@ -1507,6 +1599,25 @@ button:disabled {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+@media (max-width: 1024px) {
+  .sleep-care {
+    grid-template-columns: 1fr;
+  }
+  .sleep-care figure img {
+    position: static;
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+  .layer-sequence {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .layer-sequence li {
+    grid-column: span 2;
+  }
+  .layer-sequence li:nth-last-child(-n + 2) {
+    grid-column: span 3;
+  }
+}
 @media (max-width: 900px) {
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1517,8 +1628,37 @@ button:disabled {
   .category-grid--four {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .shop-room .editorial-grid {
-    grid-template-columns: 1fr 1fr;
+  .shop-room .editorial-grid,
+  .layer-guide,
+  .editorial-grid:has(.pillow-tech-grid) {
+    grid-template-columns: 1fr;
+  }
+  .shop-room figure img {
+    height: auto;
+    aspect-ratio: 1.8;
+  }
+  .layer-guide figure {
+    max-width: 520px;
+    width: 100%;
+    justify-self: center;
+  }
+  .bedding-layer-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .finishing-cards,
+  .bedding-edit-picks .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (600px < width < 1280px) {
+  .fabric-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .fabric-grid > div {
+    grid-column: span 2;
+  }
+  .fabric-grid > div:nth-last-child(-n + 2) {
+    grid-column: span 3;
   }
 }
 @media (max-width: 720px) {
@@ -1559,27 +1699,52 @@ button:disabled {
   .fit-options,
   .shortlist-checks,
   .bedroom-plan,
-  .steps,
-  .layer-sequence {
+  .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .finishing-cards,
+  .bedding-edit-picks .cards {
+    grid-template-columns: 1fr;
+  }
+  .bedroom-plan > li:last-child,
+  .shortlist-checks > li:last-child {
+    grid-column: 1 / -1;
   }
   .guide-specs {
     grid-template-columns: 1fr;
     gap: 0.65rem;
   }
 
-  .detail[open] {
+  .detail-layout {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .detail figure img {
-    max-height: 230px;
-  }
-  .detail-body {
-    padding-block-start: 1rem;
+    max-height: min(34dvh, 285px);
   }
   .compare-tray {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+@media (max-width: 560px) {
+  .bedding-layer-links,
+  .care-grid {
+    grid-template-columns: 1fr;
+  }
+  .layer-sequence {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .layer-sequence li,
+  .layer-sequence li:nth-last-child(-n + 2) {
+    grid-column: auto;
+  }
+  .sleep-care figure img {
+    aspect-ratio: 4 / 3;
+  }
+  .detail-specs dl {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 480px) {

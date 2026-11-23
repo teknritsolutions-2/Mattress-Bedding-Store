@@ -1,3 +1,31 @@
+# Fold & Field targeted visual fixes
+
+The preserved baseline is commit `787ea1fe`. The attachment contained the written defect descriptions, so the before captures were rendered from that commit. The separate 15-project lessons document did not turn up in the workspace or Drive search. The relevant fallback checks in the brief were applied.
+
+| Finding | Correction |
+| --- | --- |
+| Home 2 layering links | Removed persistent underlines. The five links retain a keyboard focus outline, hover treatment and their original category destinations. The steps fit five across on desktop, three plus two on tablets, and stack on narrow phones. |
+| Home 1 Sleep & Care | Replaced the dark shot with a 1440 × 960 daylit bedroom by Lotus Design N Print. The photo follows the height of the content on desktop, and the section stacks on narrower displays. Added room below the intro and removed hard line breaks inherited from the HTML source. |
+| Mattress catalogue | Replaced the four people-containing photographs for Hearth Coil, Sable Latex Hybrid, Ridge Support and Turn Dual Feel. Keel Zoned Support also received a full-mattress view. All five photos are from The Sleep Judge under CC BY 2.0. The card and detail views use the same subject. |
+| Understand mattress layers | Replaced the dated photograph with an original vector diagram of the cover, comfort layer, transition layer and support core. It is labelled as an illustrative arrangement. |
+| Product details | Balanced the photo and purchase controls in the upper area. Specifications and care span the width below. The close button stays reachable while scrolling, and image credits are accessible from the legal row in the footer. |
+| Questions by product | Added guidance about confirming terms for multiple-item purchases. Wide screens show four cards in a two-by-two grid, with a single column on narrow screens. |
+| Footer | Moved Photography Credits out of Visit & Support into the secondary legal row on all seven pages. |
+| Sitewide image and layout audit | Inspected all 12 mattress images visually, checked image dimensions and crops, and corrected the Home 2 bedroom image metadata. Adjusted tablet layouts for construction, pillow guidance, room picks and related products. |
+
+## Verification
+
+- Captured and reviewed before and after views at 390, 768, 1024 and 1440 px. Also captured all seven pages in dark RTL at 390 and 1024 px.
+- Checked all seven pages at 320, 360, 390, 425, 430, 768, 820, 960, 1024, 1180, 1280, 1440 and 1920 px in light LTR, light RTL, dark LTR and dark RTL.
+- Tested Spring, memory foam, orthopaedic, contour pillow, pillow-protector and duvet dialogs, plus longer-content models, across phone, tablet and desktop. Checked image decoding, internal scrolling, close button, Escape, backdrop and focus restoration.
+- Tested category, size and firmness filters, price sorting, three-product comparison, size-specific dimensions and price updates, both product-to-visit handoffs, form validation, request review and editing, clipboard copying and the downloaded text file.
+- Tested the Home dropdown, drawer placement and scroll lock, focus and keyboard navigation, theme and direction persistence, policy accordions, back-to-top and the photography link.
+- Matched all 12 mattress and 16 bedding records against the baseline for IDs, specifications, variants and prices. Revalidated references to 71 credited WebP assets and removed obsolete files. Static CSS and JavaScript URLs use version 4.
+
+The photos represent mattress categories and materials. Final specifications, availability and prices remain subject to store confirmation. See the [photography inventory](asset-credits.html) for individual image sources, licences and crops.
+
+---
+
 # Fold & Field visual correction
 
 The comparison baseline is Git commit `eb41f299`. The supplied attachment contained the written descriptions of the 15 visual findings. It did not include the screenshot files. New before captures were rendered directly from the preserved commit.
