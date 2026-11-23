@@ -10,7 +10,7 @@
     />
     <link rel="icon" href="../assets/icons/fold.svg?v=5" />
     <script src="../assets/js/preferences.js?v=5"></script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=7" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=8" />
   </head>
   <body data-page="home2">
     <a class="skip" href="#main">Skip to content</a>
@@ -104,29 +104,73 @@
     </dialog>
     <main id="main">
       <section class="build-hero" aria-labelledby="build-your-bed">
-        <div class="hero-photo">
-          <img
-            src="../assets/images/retail/guide.webp"
-            alt="White pillows and soft bedding beside a sunlit window"
-            width="1067"
-            height="1600"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </div>
-        <div class="hero-copy wrap">
-          <p class="eyebrow">Build your better bed</p>
-          <h1 id="build-your-bed">Your comfort.<br />Your way.</h1>
-          <p>
-            From the mattress feel to the final layer.<br />Find the combination
-            that feels like you.
-          </p>
-          <div class="actions">
-            <a class="btn light" href="#sizes">Find your mattress</a>
-            <a class="btn ghost" href="../pages/bedding.html"
-              >Explore bedding</a
-            >
+        <div class="wrap">
+          <div class="bed-builder-intro">
+            <div>
+              <p class="eyebrow">The bedroom guide</p>
+              <h1 id="build-your-bed">
+                Build your bed.<br /><span>Layer by layer.</span>
+              </h1>
+            </div>
+            <div class="bed-builder-copy">
+              <p>
+                Start with the right mattress. Find your pillow height. Finish
+                with bedding you love.
+              </p>
+              <a class="btn" href="#sizes">Start with your bed size</a>
+            </div>
           </div>
+          <nav
+            class="bed-builder-choices"
+            aria-label="Choose a layer for your bed"
+          >
+            <a class="bed-builder-choice" href="#choose-feel">
+              <img
+                src="../assets/images/retail/willow-memory-card.webp"
+                alt="White mattress on a bed frame"
+                width="900"
+                height="600"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <div>
+                <h2>Your mattress</h2>
+                <p>Find your feel</p>
+              </div>
+            </a>
+            <a
+              class="bed-builder-choice"
+              href="../pages/bedding.html?type=Pillows#catalogue"
+            >
+              <img
+                src="../assets/images/retail/contour-foam-pillow-card.webp"
+                alt="A contoured pillow with two raised edges"
+                width="900"
+                height="600"
+                decoding="async"
+              />
+              <div>
+                <h2>Your pillow</h2>
+                <p>Choose your support</p>
+              </div>
+            </a>
+            <a
+              class="bed-builder-choice"
+              href="../pages/bedding.html?type=Sheets#catalogue"
+            >
+              <img
+                src="../assets/images/retail/linen-sheets-card.webp"
+                alt="Soft folds of bed linen"
+                width="900"
+                height="600"
+                decoding="async"
+              />
+              <div>
+                <h2>Your bedding</h2>
+                <p>Add the finishing layers</p>
+              </div>
+            </a>
+          </nav>
         </div>
       </section>
       <section id="sizes" class="wrap section retail-section">
