@@ -1,6 +1,7 @@
-import { mattresses } from "./products-data.js?v=4";
-import { bedding } from "./bedding-data.js?v=4";
-import { store } from "./site-config.js?v=4";
+import { enhanceSelect, syncSelect } from "./select-menu.js?v=5";
+import { mattresses } from "./products-data.js?v=5";
+import { bedding } from "./bedding-data.js?v=5";
+import { store } from "./site-config.js?v=5";
 const form = document.querySelector("#visit-form");
 const fields = form.elements;
 const review = document.querySelector("#review");
@@ -61,11 +62,14 @@ function sync() {
     ),
   ];
   options(fields.size, [["", "No preference"], ...sizes.map((s) => [s, s])]);
+  syncSelect(fields.category);
+  syncSelect(fields.size);
 }
 sync();
 if ([...fields.size.options].some((o) => o.value === params.get("size")))
   fields.size.value = params.get("size");
 fields.product.onchange = sync;
+form.querySelectorAll("select").forEach(enhanceSelect);
 function today() {
   const d = new Date();
   return [

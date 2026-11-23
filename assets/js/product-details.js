@@ -1,4 +1,5 @@
-import { root, page, money } from "./site-config.js?v=4";
+import { enhanceSelect } from "./select-menu.js?v=5";
+import { root, page, money } from "./site-config.js?v=5";
 
 export function productImage(product, card = false) {
   const image = card && product.cardImage ? product.cardImage : product.image;
@@ -85,6 +86,7 @@ export function showDetail(product, preferredSize, trigger) {
       "#visit";
   }
   select.onchange = update;
+  enhanceSelect(select);
   update();
   dismissDialog(dialog, trigger);
   document.body.append(dialog);

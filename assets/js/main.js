@@ -1,5 +1,5 @@
-import { icon } from "./icons.js?v=4";
-import { policy } from "./site-config.js?v=4";
+import { icon } from "./icons.js?v=5";
+import { policy } from "./site-config.js?v=5";
 const doc = document.documentElement;
 const drawer = document.querySelector("#drawer");
 const opener = document.querySelector(".menu-toggle");
@@ -65,8 +65,36 @@ matchMedia("(min-width: 1240px)").addEventListener("change", (e) => {
   if (e.matches && drawer.open) drawer.close();
 });
 const topButton = document.querySelector(".to-top");
-const showTop = () => (topButton.hidden = window.scrollY < 450);
-window.addEventListener("scroll", showTop, { passive: true });
+let scrollFrame;
+function showTop() {
+  topButton.hidden = window.scrollY < 450;
+  if (topButton.hidden || topButton.matches(":focus")) {
+    topButton.removeAttribute("data-obstructed");
+    return;
+  }
+  const { left, right, top, bottom } = topButton.getBoundingClientRect();
+  const interactive =
+    "img, svg, figure, p, h1, h2, h3, dt, dd, a, button, input, select, textarea, summary, [role=combobox], [role=listbox]";
+  const obscuresContent = [left + 2, (left + right) / 2, right - 2].some((x) =>
+    [top + 2, (top + bottom) / 2, bottom - 2].some((y) =>
+      document
+        .elementsFromPoint(x, y)
+        .some((el) => !topButton.contains(el) && el.closest(interactive)),
+    ),
+  );
+  topButton.toggleAttribute("data-obstructed", obscuresContent);
+}
+function scheduleTop() {
+  if (scrollFrame) return;
+  scrollFrame = requestAnimationFrame(() => {
+    scrollFrame = null;
+    showTop();
+  });
+}
+window.addEventListener("scroll", scheduleTop, { passive: true });
+window.addEventListener("resize", scheduleTop);
+new ResizeObserver(scheduleTop).observe(document.body);
+topButton.addEventListener("blur", scheduleTop);
 showTop();
 topButton.onclick = () => {
   window.scrollTo({ top: 0 });

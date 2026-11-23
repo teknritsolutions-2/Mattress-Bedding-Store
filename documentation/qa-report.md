@@ -1,3 +1,26 @@
+# Fold & Field sitewide polish
+
+The baseline is commit `41e60552`. The attachment contained the written descriptions. Before captures were rendered from that baseline.
+
+| Area | Correction |
+| --- | --- |
+| Section rhythm | Reused spacing tokens for headings, intro copy, forms and card groups. Added dedicated clearance above the pillow technology cards and balanced Sleep & Care title-to-card spacing. |
+| Readability | Relaxed heading line height and comparison specifications. Body text and selector options retain readable sizes. |
+| Dropdowns | Form selectors expand in the document directly below their fields, with scrollable option lists and viewport clearance. The native elements still supply form values and validation. Keyboard, touch, RTL, type-ahead, Escape and required-field behavior were checked. |
+| Home 2 | Comparison rows align image, specifications and price on wider screens and become compact stacked summaries on phones. Bedding-layer cards have equal track widths and stretch to match each row. The five-step links use consistent number alignment and deliberate tablet and mobile wrapping. |
+| Back-to-top | The fixed button follows the reading direction and temporarily hides where it would cover photography, text or controls. Verified that it reappears at the footer and returns the page to the top. |
+
+## Verification
+
+- Checked all seven pages at 320, 360, 390, 430, 768, 820, 960, 1024, 1180, 1280 and 1440 px in light LTR, light RTL, dark LTR and dark RTL.
+- Reviewed full-page and focused captures at 390, 768, 1024 and 1440 px, plus dark RTL full pages at 390, 820 and 1180 px.
+- Tested 266 expanded dropdown instances across seven widths and two display combinations. Covered the mattress finder, price by size, filters and sorting, product dialogs, and contact choices. Checked placement, scrolling, focus and Escape dismissal. The baseline browser captures showed focused native selects, while the revised captures show the actual expanded lists.
+- Ran the shopping and enquiry journeys at phone, tablet and desktop sizes. Verified catalogue filtering and sorting, three-product comparison, variant pricing and dimensions, product and size preselection, validation, request review and editing, clipboard copy and download.
+- Confirmed the drawer still opens from the physical left, display preferences persist, and policy and navigation interactions work. Ran the touch finder, variant and visit handoff in Chromium and WebKit.
+- Confirmed that the 12 mattress and 16 bedding products and photography remain unchanged. Updated HTML and module release URLs to version 5.
+
+---
+
 # Fold & Field targeted visual fixes
 
 The preserved baseline is commit `787ea1fe`. The attachment contained the written defect descriptions, so the before captures were rendered from that commit. The separate 15-project lessons document did not turn up in the workspace or Drive search. The relevant fallback checks in the brief were applied.

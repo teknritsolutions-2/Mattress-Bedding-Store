@@ -1,12 +1,13 @@
+import { enhanceSelect, syncSelect } from "./select-menu.js?v=5";
 import {
   mattresses,
   featuredMattressIds,
   guidedMattressIds,
-} from "./products-data.js?v=4";
-import { bedding } from "./bedding-data.js?v=4";
-import { page, money } from "./site-config.js?v=4";
-import { showDetail, productImage } from "./product-details.js?v=4";
-import { mountComparison } from "./comparison.js?v=4";
+} from "./products-data.js?v=5";
+import { bedding } from "./bedding-data.js?v=5";
+import { page, money } from "./site-config.js?v=5";
+import { showDetail, productImage } from "./product-details.js?v=5";
+import { mountComparison } from "./comparison.js?v=5";
 
 const currentPage = document.body.dataset.page;
 const products = currentPage === "bedding" ? bedding : mattresses;
@@ -142,6 +143,7 @@ function renderGuide(target) {
     });
   }
   sizeField.onchange = updatePrices;
+  enhanceSelect(sizeField);
   updatePrices();
   bindDetails(target, () => sizeField.value);
 }
@@ -200,6 +202,7 @@ if (form?.hasAttribute("data-filter")) {
       "",
       location.pathname + (query.size ? "?" + query : "") + location.hash,
     );
+    form.querySelectorAll("select").forEach(syncSelect);
     render(
       matching,
       document.querySelector("#results"),
@@ -221,3 +224,5 @@ if (form?.hasAttribute("data-filter")) {
   };
   apply();
 }
+
+form?.querySelectorAll("select").forEach(enhanceSelect);

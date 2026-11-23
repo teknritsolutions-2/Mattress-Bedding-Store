@@ -1,5 +1,5 @@
-import { money } from "./site-config.js?v=4";
-import { dismissDialog } from "./product-details.js?v=4";
+import { money } from "./site-config.js?v=5";
+import { dismissDialog } from "./product-details.js?v=5";
 
 export function mountComparison(target, mattresses) {
   if (!target) return null;
