@@ -10,7 +10,7 @@
     />
     <link rel="icon" href="../assets/icons/fold.svg?v=5" />
     <script src="../assets/js/preferences.js?v=5"></script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=5" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=6" />
   </head>
   <body data-page="home2">
     <a class="skip" href="#main">Skip to content</a>
@@ -103,29 +103,36 @@
       </div>
     </dialog>
     <main id="main">
-      <section class="build-hero guided-intro wrap">
+      <section class="build-hero wrap" aria-labelledby="build-your-bed">
         <div class="hero-copy">
-          <p class="eyebrow">The bedroom guide</p>
-          <h1 id="build-your-bed">Build your bed</h1>
+          <p class="eyebrow">Your bed, thoughtfully layered</p>
+          <h1 id="build-your-bed">Good nights<br />start here.</h1>
           <p>
-            Choose a size, compare how mattresses feel, then add a pillow and
-            bedding that fit.
+            Find your mattress feel. Choose your pillow. Bring it all together
+            with bedding that suits you.
           </p>
           <div class="actions">
-            <a class="btn" href="#sizes">Start with size</a
-            ><a class="outline" href="../pages/bedding.html">Shop bedding</a>
+            <a class="btn" href="#sizes">Build your bed</a>
+            <a class="text-link" href="../pages/products.html"
+              >Explore mattresses</a
+            >
           </div>
         </div>
         <div class="hero-photo">
           <img
             src="../assets/images/retail/guide.webp"
-            alt="Layered white bedding in a bedroom beside a window"
+            alt="White pillows and layered bedding beside a sunlit window"
             width="1067"
             height="1600"
             fetchpriority="high"
             decoding="async"
           />
         </div>
+        <nav class="bed-guide-links" aria-label="Build your bed">
+          <a href="#sizes">Choose your size</a>
+          <a href="#choose-feel">Find your feel</a>
+          <a href="#bedding-layers">Add your layers</a>
+        </nav>
       </section>
       <section id="sizes" class="wrap section retail-section">
         <div class="section-head">
